@@ -1,0 +1,26 @@
+{
+  "plugins": [
+    {
+      "name": "general",
+      "options": {
+        "srcFolderLocation": "./src/components"
+      }
+    },
+    {
+      "name": "css",
+      "options": {
+        "cssModuleSupport": true,
+        "sassSupport": true
+      }
+    },
+    {
+      "name": "reactJS",
+      "options": {
+        "createInterface": true,
+        "styleLibrary": "none",
+        "createProps": true,
+        "propList": ["testProp", "testProp2"]
+      }
+    }
+  ]
+}

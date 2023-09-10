@@ -1,0 +1,34 @@
+{
+  "plugins": [
+    {
+      "name": "general",
+      "options": {
+        "srcFolderLocation": "./src/components"
+      }
+    },
+    {
+      "name": "css",
+      "options": {
+        "cssModuleSupport": true,
+        "sassSupport": false
+      }
+    },
+    {
+      "name": "reactJS",
+      "options": {
+        "createInterface": true,
+        "styleLibrary": "none",
+        "createProps": true,
+        "propList": ["testProp", "testProp2"]
+      }
+    },
+    {
+      "name": "builderIO",
+      "options": {
+        "override": true,
+        "addChildren": true,
+        "name": "__DEFAULT__"
+      }
+    }
+  ]
+}

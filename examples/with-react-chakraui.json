@@ -1,0 +1,31 @@
+{
+  "plugins": [
+    {
+      "name": "general",
+      "options": {
+        "srcFolderLocation": "./src/components"
+      }
+    },
+    {
+      "name": "css",
+      "options": {
+        "cssModuleSupport": true,
+        "sassSupport": false
+      }
+    },
+    {
+      "name": "reactJS",
+      "options": {
+        "createInterface": true,
+        "styleLibrary": "chakraUI",
+        "createProps": true
+      }
+    },
+    {
+      "name": "chakraUI",
+      "options": {
+        "componentName": "Text"
+      }
+    }
+  ]
+}

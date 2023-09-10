@@ -1,0 +1,41 @@
+{
+  "plugins": [
+    {
+      "name": "general",
+      "options": {
+        "srcFolderLocation": "./src/components"
+      }
+    },
+    {
+      "name": "css",
+      "options": {
+        "cssModuleSupport": true,
+        "sassSupport": false
+      }
+    },
+    {
+      "name": "reactJS",
+      "options": {
+        "createInterface": true,
+        "styleLibrary": "chakraUI",
+        "createProps": true,
+        "propList": ["testProp", "testProp2"]
+      }
+    },
+    "materialUI",
+    {
+      "name": "chakraUI",
+      "options": {
+        "componentName": "Text"
+      }
+    },
+    {
+      "name": "builderIO",
+      "options": {
+        "override": true,
+        "addChildren": true,
+        "name": "__DEFAULT__"
+      }
+    }
+  ]
+}

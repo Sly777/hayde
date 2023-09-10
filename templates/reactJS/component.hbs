@@ -1,0 +1,11 @@
+function {{ general.answers.componentName }}({
+{{#each reactJS.answers.propList}}
+  {{ this }} = defaultProps.{{ this }},
+{{/each}}
+}: Props) {
+  return (
+    {{ componentContent }}
+  );
+}
+
+export default {{ general.answers.componentName }};

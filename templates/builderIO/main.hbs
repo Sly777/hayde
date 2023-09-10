@@ -1,0 +1,12 @@
+import { Component as BuilderIoComponent } from "@builder.io/sdk";
+
+export const builderIoSettings: BuilderIoComponent = {
+  name: "{{ builderIO.answers.name }}",
+  override: {{ builderIO.answers.override }},
+  canHaveChildren: {{ builderIO.answers.addChildren }},
+  inputs: [
+    {{#each reactJS.answers.propList}}
+      { name: "{{ this }}", type: "string", defaultValue: "" },
+    {{/each}}
+  ],
+};

@@ -1,0 +1,52 @@
+{
+  "name": "hayde",
+  "description": "A CLI tool to create React components quickly and easily. It supports ChakraUI, MaterialUI, BuilderIO, and more.",
+  "repository": "sly777/hayde",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "bin": {
+    "hayde": "./dist/index.js"
+  },
+  "engines": {
+    "node": ">=18.16"
+  },
+  "author": "Sly777",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "tsx ./src/index.ts",
+    "start:dist": "node ./dist/index.js",
+    "watch": "yarn start --watch",
+    "lint": "yarn eslint ./src",
+    "lint:fix": "yarn lint --fix",
+    "build": "rm -rf dist && yarn lint && yarn typecheck && ncc build ./src/index.ts -q -o dist && yarn copy-templates",
+    "typecheck": "tsc --noEmit",
+    "prepare": "is-ci || husky install",
+    "copy-templates": "cp -r ./templates ./dist/templates",
+    "version-it": "yarn build && yarn version --patch && git push --follow-tags"
+  },
+  "dependencies": {
+    "commander": "11.0.0",
+    "emmet": "2.4.6",
+    "figlet": "1.6.0",
+    "handlebars": "4.7.8",
+    "inquirer": "9.2.11"
+  },
+  "devDependencies": {
+    "@types/figlet": "1.5.6",
+    "@types/inquirer": "9.0.3",
+    "@types/node": "20.6.0",
+    "@typescript-eslint/eslint-plugin": "6.6.0",
+    "@typescript-eslint/parser": "6.6.0",
+    "@vercel/ncc": "0.38.0",
+    "eslint": "8.49.0",
+    "eslint-plugin-import": "2.28.1",
+    "eslint-plugin-unicorn": "48.0.1",
+    "husky": "8.0.3",
+    "is-ci": "3.0.1",
+    "lint-staged": "14.0.1",
+    "tsx": "3.12.8",
+    "typescript": "5.2.2"
+  }
+}

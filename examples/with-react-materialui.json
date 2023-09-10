@@ -1,0 +1,31 @@
+{
+  "plugins": [
+    {
+      "name": "general",
+      "options": {
+        "srcFolderLocation": "./src/components"
+      }
+    },
+    {
+      "name": "css",
+      "options": {
+        "cssModuleSupport": true,
+        "sassSupport": false
+      }
+    },
+    {
+      "name": "reactJS",
+      "options": {
+        "createInterface": true,
+        "styleLibrary": "materialUI",
+        "createProps": true
+      }
+    },
+    {
+      "name": "materialUI",
+      "options": {
+        "componentName": "Text"
+      }
+    }
+  ]
+}

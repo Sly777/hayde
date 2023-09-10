@@ -1,0 +1,11 @@
+type Props = {
+{{#each reactJS.answers.propList}}
+  {{ this }}: string;
+{{/each}}
+};
+
+const defaultProps: Props = {
+{{#each reactJS.answers.propList}}
+  {{ this }}: "",
+{{/each}}
+};
