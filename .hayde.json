@@ -22,6 +22,7 @@
         "propList": ["testProp", "testProp2"]
       }
     },
+    "storybook",
     "materialUI",
     {
       "name": "chakraUI",

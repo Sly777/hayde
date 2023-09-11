@@ -1,0 +1,14 @@
+import type { Meta, StoryObj } from "@storybook/react";
+
+import {{ general.answers.componentName }} from "./{{ general.answers.componentName }}";
+
+const meta: Meta<typeof {{ general.answers.componentName }}> = {
+  component: {{ general.answers.componentName }},
+};
+
+export default meta;
+type Story = StoryObj<typeof {{ general.answers.componentName }}>;
+
+export const General: Story = {
+  render: () => <{{ general.answers.componentName }} />,
+};
