@@ -2,7 +2,7 @@
   "name": "hayde",
   "description": "A CLI tool to create React components quickly and easily. It supports ChakraUI, MaterialUI, BuilderIO, and more.",
   "repository": "sly777/hayde",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "bin": {
     "hayde": "./dist/index.js"
