@@ -1,3 +1,4 @@
 .eslintrc.cjs
 lint-staged.config.js
 dist/**/*
+src/components/**/*
