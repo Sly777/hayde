@@ -10,6 +10,8 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Sly777_hayde&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Sly777_hayde)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Sly777_hayde&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=Sly777_hayde)
 [![Known Vulnerabilities](https://snyk.io/test/github/Sly777/hayde/badge.svg)](https://snyk.io/test/github/Sly777/hayde)
+[![npm version](https://badge.fury.io/js/hayde.svg)](https://badge.fury.io/js/hayde)
+[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=Sly777_hayde)](https://sonarcloud.io/summary/new_code?id=Sly777_hayde)
 
