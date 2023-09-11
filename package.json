@@ -13,8 +13,12 @@
   "engines": {
     "node": ">=18.16"
   },
-  "author": "Sly777",
-  "license": "LGPL-3.0-or-later",
+  "author": "Ilker Guller (https://ilkerguller.com)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/sly777/hayde/issues"
+  },
+  "homepage": "https://github.com/sly777/hayde#readme",
   "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
@@ -50,5 +54,22 @@
     "lint-staged": "14.0.1",
     "tsx": "3.12.8",
     "typescript": "5.2.2"
-  }
+  },
+  "keywords": [
+    "cli-tool",
+    "cli-utility",
+    "react",
+    "component-create",
+    "component-generator",
+    "typescript",
+    "cli-app",
+    "cli",
+    "react-component",
+    "react-components",
+    "react-component-generator",
+    "react-component-creator",
+    "builder.io",
+    "material-ui",
+    "chakra-ui"
+  ]
 }
