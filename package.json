@@ -11,7 +11,7 @@
     "node": ">=18.16"
   },
   "author": "Sly777",
-  "license": "MIT",
+  "license": "LGPL-3.0-or-later",
   "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
