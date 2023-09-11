@@ -121,6 +121,22 @@ For CLI Arguments, please check the [CLI arguments](./docs/cli-arguments.md) pag
 
 For creating custom plugin, please check the [custom plugin](./docs/how-to-create-custom-plugin.md) page. You can create your own libraries' plugin easily with extensive functionally and [Handlebars](https://handlebarsjs.com/) template engine.
 
+Also; you can create your hayde plugin with hayde. Just update your `.hayde.json` file like below:
+
+```json
+{
+  "plugins": [
+    "createPlugin"
+  ]
+}
+```
+
+then run the following command:
+
+```bash
+npx hayde
+```
+
 ## Contributing
 
 If you'd like to contribute to Hayde, please check the [contributing](./docs/contributing.md) page. Contributions are always welcome! 

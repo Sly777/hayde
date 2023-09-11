@@ -14,6 +14,24 @@ plugin-name
 ├── package.json
 ```
 
+## Create Plugin with Hayde?!
+
+You can also create your plugin with Hayde. First; you need to create `.hayde.json` file in your project root. And then add `createPlugin` **only** to the plugins array.
+
+```json
+{
+  "plugins": [
+    "createPlugin"
+  ]
+}
+```
+
+After that, you can run the following command to create your plugin.
+
+```bash
+npx hayde
+```
+
 ### index.js
 
 This file is the entry point of the plugin. It should export;

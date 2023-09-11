@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import { CreatorAnswers } from "@/creatorSettings/creatorSettings.type";
 import { ISettings as GeneralSettings } from "@/features/general/interfaces";
+import { ISettings as PluginCreatorSettings } from "@/features/createPlugin/interfaces";
 import { getSpecificPluginAnswers } from "../dataLibrary";
 
 export function checkFolder(folderPath: string): boolean {
@@ -11,17 +12,43 @@ export function checkFolder(folderPath: string): boolean {
   }
 }
 
+interface CreateFileOptions {
+  fullName?: boolean;
+  isPluginCreator?: boolean;
+}
+
+const defaultCreateFileOptions: CreateFileOptions = {
+  fullName: false,
+  isPluginCreator: false,
+};
+
 export function createFile(
   allAnswers: CreatorAnswers,
   fileName: string = ".ts",
   fileContent: string,
+  options?: CreateFileOptions
 ) {
+  options = { ...defaultCreateFileOptions, ...options };
+
   const generalAnswers = getSpecificPluginAnswers(
     allAnswers,
-    "general",
+    "general"
   ) as Required<GeneralSettings>;
-  const folderPath = `${generalAnswers.srcFolderLocation}/${generalAnswers.componentName}`;
-  const fileFullName = `${generalAnswers.componentName}${fileName}`;
+
+  const pluginCreator: {
+    createPlugin?: Partial<PluginCreatorSettings>;
+  } = {};
+  if (options.isPluginCreator) {
+    pluginCreator.createPlugin = allAnswers.createPlugin?.answers;
+  }
+
+  const folderPath =
+    options.isPluginCreator && pluginCreator.createPlugin
+      ? `${pluginCreator.createPlugin.srcFolderLocation}/${pluginCreator.createPlugin.pluginName}`
+      : `${generalAnswers.srcFolderLocation}/${generalAnswers.componentName}`;
+  const fileFullName = options.fullName
+    ? `${fileName}`
+    : `${generalAnswers.componentName}${fileName}`;
   const fullPath = `${folderPath}/${fileFullName}`;
 
   if (!fs.existsSync(folderPath)) {

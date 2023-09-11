@@ -1,0 +1,19 @@
+import { PluginInitReturn } from "@/creatorSettings/creatorSettings.type";
+
+export interface IPluginOptions {
+  testOption?: boolean;
+}
+
+export interface ISettings extends IPluginOptions {
+  templateName: string;
+  templateFolder: string;
+}
+
+export type OutAnswers = {
+  {{ createPlugin.answers.pluginName }}: PluginInitReturn<ISettings>;
+};
+
+export const defaultSettings: ISettings = {
+  templateName: "main",
+  templateFolder: "{{ createPlugin.answers.pluginName }}",
+};

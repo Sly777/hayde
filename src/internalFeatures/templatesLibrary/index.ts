@@ -68,7 +68,9 @@ export async function compileTemplate(
 
   let dirName = __dirname;
   const fileName = `${templateFolder}/${templateName}.hbs`;
-  const filePath = `${generalAnswers.templatesPath}/${fileName}`;
+  const filePath = generalAnswers.templatesPath
+    ? `${generalAnswers.templatesPath}/${fileName}`
+    : fileName;
 
   if (!fs.existsSync(`${dirName}${filePath}`)) dirName = path.dirname("./");
   if (!fs.existsSync(`${dirName}${filePath}`)) {

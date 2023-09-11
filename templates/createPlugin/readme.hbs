@@ -1,0 +1,27 @@
+## {{ createPlugin.answers.pluginName }} module
+
+### Usage
+
+Please create a new json file called `.hayde.json` in your project root. This file will be used to configure the Hayde.
+
+And then add `{{ createPlugin.answers.pluginName }}` to the plugins array.
+
+```json
+{
+  "plugins": [
+    "general",
+    "{{ createPlugin.answers.pluginName }}",
+    "reactJS",
+    "materialUI",
+    "chakraUI"
+  ]
+}
+```
+
+### Options
+
+| Option         | Description | Default   | Type     |
+| -------------- | ----------- | --------- | -------- |
+| templateName   | -           | cssModule | string   |
+| templateFolder | -           | css       | string   |
+| testOption     | -           | -         | boolean  |
