@@ -123,7 +123,9 @@ For creating custom plugin, please check the [custom plugin](./docs/how-to-creat
 
 ## Contributing
 
-If you'd like to contribute to Hayde, please check the [contributing](./docs/contributing.md) page. Contributions are always welcome! If you want to integrate your library/plugin/boilerplate to Hayde, please check the [how to create custom plugin](./docs/how-to-create-custom-plugin.md) page.
+If you'd like to contribute to Hayde, please check the [contributing](./docs/contributing.md) page. Contributions are always welcome! 
+
+If you want to integrate your library/plugin/boilerplate to Hayde, please check the [how to create custom plugin](./docs/how-to-create-custom-plugin.md) page.
 
 ## License
 
