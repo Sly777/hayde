@@ -1,4 +1,4 @@
-import { Answers, Question } from "inquirer";
+import { Answers, ListQuestion, Question } from "inquirer";
 import { IPluginOptions } from "./interfaces";
 import Separator from "inquirer/lib/objects/separator";
 
@@ -35,7 +35,7 @@ export const qCreateInterface: Question<Answers> = {
   default: true,
 };
 
-export const qChooseStyleLibrary = {
+export const qChooseStyleLibrary: ListQuestion<Answers> = {
   when: (answers: IPluginOptions) => answers.styleLibrary == undefined,
   type: "list",
   name: "styleLibrary",
@@ -46,7 +46,7 @@ export const qChooseStyleLibrary = {
   },
 };
 
-export const reactComponentQuestions: Question[] = [
+export const reactComponentQuestions: (Question | ListQuestion)[] = [
   qChooseStyleLibrary,
   qCreateInterface,
   qCreateProps,

@@ -29,6 +29,7 @@ export class CliTool {
   private settings: CreatorSettings = defaultSettings;
   private createdBy: string = "Created by github/sly777";
   private answers: PluginAnswers = {};
+  private returnsFromPlugins = {};
 
   constructor() {
     console.clear();
@@ -61,11 +62,24 @@ export class CliTool {
 
         const pluginSettings = typeof plugin === "string" ? {} : plugin.options;
 
-        await runPlugin({
+        const result = await runPlugin({
           pluginSettings,
           globalSettings: this.settings,
           allAnswers: this.answers,
+          allReturns: this.returnsFromPlugins,
         });
+
+        if (!result) {
+          continue;
+        }
+
+        if (result.returns) {
+          this.returnsFromPlugins = {
+            ...this.returnsFromPlugins,
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+            [pluginName]: result.returns,
+          };
+        }
       }
     }
   }

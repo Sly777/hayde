@@ -2,6 +2,7 @@ import { Answers } from "inquirer";
 import { PluginInitReturn } from "@/creatorSettings/creatorSettings.type";
 import { ISettings as MaterialUIOptions } from "@/features/materialUI/interfaces";
 import { ISettings as ChakraUIOptions } from "@/features/chakraUI/interfaces";
+import { IReturns as EmmetReturns } from "@/features/emmet/interfaces";
 
 export interface ReactPropAnswers extends Answers {
   propName?: string;
@@ -39,6 +40,10 @@ export type OutAnswers = {
   reactJS: PluginInitReturn<ISettings>;
   materialUI: PluginInitReturn<MaterialUIOptions>;
   chakraUI: PluginInitReturn<ChakraUIOptions>;
+};
+
+export type OutReturns = {
+  emmet?: EmmetReturns;
 };
 
 export const defaultSettings: ISettings = {

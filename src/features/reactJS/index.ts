@@ -36,7 +36,7 @@ export async function initPlugin({
 > {
   const answers = (await inquirer.prompt(
     reactComponentQuestions,
-    options,
+    options
   )) as Required<IPluginOptions>;
 
   if (answers.createProps) {
@@ -54,11 +54,18 @@ export async function runPlugin({
   pluginSettings,
   globalSettings,
   allAnswers,
+  allReturns,
 }: PluginRunParams<ISettings, OutAnswers>): Promise<PluginRunReturn> {
-  await createInterfaceFile({ pluginSettings, globalSettings, allAnswers });
+  await createInterfaceFile({
+    pluginSettings,
+    globalSettings,
+    allAnswers,
+    allReturns,
+  });
   await createReactComponentFile({
     pluginSettings,
     globalSettings,
     allAnswers,
+    allReturns,
   });
 }

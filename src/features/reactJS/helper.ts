@@ -4,6 +4,7 @@ import {
   IPluginOptions,
   ISettings,
   OutAnswers,
+  OutReturns,
   StyleLibrary,
 } from "./interfaces";
 import { reactPropQuestions } from "./questions";
@@ -13,7 +14,7 @@ import { compileTemplate } from "@/internalFeatures/templatesLibrary";
 import { createFile } from "@/internalFeatures/fsLibrary";
 
 export async function askReactPropsQuestions(
-  options: IPluginOptions,
+  options: IPluginOptions
 ): Promise<string[]> {
   const propNames = options.propList ?? [];
   let addMore = true;
@@ -44,13 +45,13 @@ export async function createInterfaceFile({
       answers.interfaceTemplateName,
       answers.templateFolder,
       globalSettings,
-      allAnswers,
+      allAnswers
     );
 
     createFile(
       allAnswers,
       `${answers.interfaceFileSuffix}.ts`,
-      interfaceContent,
+      interfaceContent
     );
   }
 }
@@ -59,21 +60,22 @@ export async function createReactComponentFile({
   pluginSettings,
   globalSettings,
   allAnswers,
-}: PluginRunParams<ISettings, OutAnswers>) {
+  allReturns,
+}: PluginRunParams<ISettings, OutAnswers, OutReturns>) {
   const answers = allAnswers.reactJS?.answers as Required<ISettings>;
 
   const reactImportsContent = await compileTemplate(
     answers.importsTemplateName,
     answers.templateFolder,
     globalSettings,
-    allAnswers,
+    allAnswers
   );
 
   const reactPropsContent = await compileTemplate(
     answers.propsTemplateName,
     answers.templateFolder,
     globalSettings,
-    allAnswers,
+    allAnswers
   );
 
   let reactComponentInsideContent = "";
@@ -83,7 +85,7 @@ export async function createReactComponentFile({
         answers.componentContentTemplateName,
         answers.templateFolder,
         globalSettings,
-        allAnswers,
+        allAnswers
       );
       break;
     }
@@ -93,7 +95,7 @@ export async function createReactComponentFile({
         allAnswers.chakraUI.answers.componentContentTemplateName,
         allAnswers.chakraUI.answers.templateFolder,
         globalSettings,
-        allAnswers,
+        allAnswers
       );
       break;
     }
@@ -103,14 +105,14 @@ export async function createReactComponentFile({
         allAnswers.materialUI.answers.componentContentTemplateName,
         allAnswers.materialUI.answers.templateFolder,
         globalSettings,
-        allAnswers,
+        allAnswers
       );
       break;
     }
   }
 
   reactComponentInsideContent = removeUnnecessaryHandlebarsAdditionOnEnd(
-    reactComponentInsideContent,
+    reactComponentInsideContent
   );
 
   const reactComponentContent = await compileTemplate(
@@ -120,14 +122,14 @@ export async function createReactComponentFile({
     allAnswers,
     {
       componentContent: reactComponentInsideContent,
-    },
+    }
   );
 
   const reactExportsContent = await compileTemplate(
     answers.exportsTemplateName,
     answers.templateFolder,
     globalSettings,
-    allAnswers,
+    allAnswers
   );
 
   const content = `

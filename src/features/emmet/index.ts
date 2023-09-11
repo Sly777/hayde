@@ -3,12 +3,21 @@ import expand from "emmet";
 import {
   PluginInitParams,
   PluginInitReturn,
+  PluginRunParams,
+  PluginRunReturn,
 } from "@/creatorSettings/creatorSettings.type";
-import { IPluginOptions } from "./interfaces";
+import {
+  EmmetArea,
+  IPluginOptions,
+  IReturns,
+  ISettings,
+  OutAnswers,
+} from "./interfaces";
 import { questions } from "./questions";
 import inquirer from "inquirer";
+import { errorLog } from "@/helper";
 
-export { questions } from "./questions";
+export { defaultSettings } from "./interfaces";
 
 export const pluginName = "emmet";
 
@@ -20,11 +29,50 @@ export async function initPlugin({
 > {
   const answers = (await inquirer.prompt(
     questions,
-    options,
+    options
   )) as Required<IPluginOptions>;
+
+  if (answers.code.includes(answers.componentContentTag)) {
+    answers.area = EmmetArea.inside;
+  }
 
   return {
     answers,
+  };
+}
+
+// eslint-disable-next-line @typescript-eslint/require-await
+export async function runPlugin({
+  pluginSettings,
+  globalSettings,
+  allAnswers,
+}: PluginRunParams<ISettings, OutAnswers>): Promise<PluginRunReturn<IReturns>> {
+  const answers = allAnswers.emmet?.answers as Required<ISettings>;
+  let { code } = answers;
+  const { area, componentContentTag } = answers;
+
+  if (!code) {
+    errorLog("No emmet code provided");
+    throw new Error("No emmet code provided");
+  }
+
+  if (!code.includes(componentContentTag)) {
+    // eslint-disable-next-line unicorn/no-lonely-if
+    if (area === EmmetArea.inside) {
+      code = `${code}{{{componentContent}}}`;
+    }
+  }
+
+  const htmlContent = expand(code);
+  const { classNames, ids } = getClassnamesAndIDs(htmlContent);
+
+  return {
+    returns: {
+      area,
+      classNames,
+      ids,
+      htmlContent,
+    },
   };
 }
 

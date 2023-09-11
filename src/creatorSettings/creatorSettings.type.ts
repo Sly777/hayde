@@ -7,7 +7,9 @@ export interface PluginImport<T = object> {
   options: T;
 }
 
-export type PluginRunReturn = void;
+export type PluginRunReturn<T = object> = void | {
+  returns: T;
+};
 
 export interface PluginInitParams<T = object, K = object> {
   globalOptions?: CreatorSettings;
@@ -27,10 +29,19 @@ export interface PluginInitReturn<T = EmptyObjectWithOldAnswers> {
   answers: T;
 }
 
-export interface PluginRunParams<T = object, K = object> {
+export interface PluginRunParams<
+  T = object,
+  K = object,
+  allReturnsType = object
+> {
   globalSettings: CreatorSettings;
   pluginSettings: T;
   allAnswers: K;
+  allReturns: PluginReturnList<allReturnsType>;
+}
+
+export interface PluginReturnList<T = object> {
+  [key: string]: PluginRunReturn<T>;
 }
 
 export interface PluginExport {

@@ -43,6 +43,7 @@ This will launch the CLI tool and guide you through the process of creating a ne
   - [Table of Contents](#table-of-contents)
   - [Settings](#settings)
   - [Examples](#examples)
+  - [Supported Libraries on Component Creation](#supported-libraries-on-component-creation)
   - [NPM Scripts](#npm-scripts)
   - [CLI Arguments](#cli-arguments)
   - [How to create custom plugin](#how-to-create-custom-plugin)
@@ -92,6 +93,19 @@ For more information on the available options, please check the [options](./docs
 ## Examples
 
 For Examples, please check the [examples](./examples) folder. You can just copy JSON files from this folder and paste to root folder of your project. Then you can just run Hayde.
+
+## Supported Libraries on Component Creation
+
+You can create React components with the following libraries, you just need to add the library name to the plugins array in the `.hayde.json` file.
+
+- [Chakra UI](https://chakra-ui.com/) - [Source](./src/features/chakraUI/)
+- [Material UI](https://material-ui.com/) - [Source](./src/features/materialUI/)
+- [Emmet](https://emmet.io/) - [Source](./src/features/emmet/)
+- [Storybook](https://storybook.js.org/) - [Source](./src/features/storybook/)
+- [Builder.io](https://www.builder.io/) - [Source](./src/features/builderIO/)
+- [React.js](https://reactjs.org/) - [Source](./src/features/reactJS/)
+- CSS and SCSS support - [Source](./src/features/css/)
+- [TypeScript](https://www.typescriptlang.org/)
 
 ## NPM Scripts
 
