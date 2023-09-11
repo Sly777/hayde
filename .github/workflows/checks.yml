@@ -1,0 +1,90 @@
+name: Code Checks
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  tsc:
+    name: Typescript Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run typescript check
+        run: yarn typecheck
+
+  eslint:
+    name: Eslint Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run eslint check
+        run: yarn lint:error-only
+
+  build:
+    name: Build Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run build check
+        run: yarn build
+        env:
+          CI: false
+
+  sonarqube:
+    name: Sonarcloud Request
+    runs-on: ubuntu-latest
+    needs: [tsc, eslint, build]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

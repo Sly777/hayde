@@ -27,6 +27,7 @@
     "watch": "yarn start --watch",
     "lint": "yarn eslint ./src",
     "lint:fix": "yarn lint --fix",
+    "lint:error-only": "yarn lint --quiet",
     "build": "rm -rf dist && yarn lint && yarn typecheck && ncc build ./src/index.ts -q -o dist && yarn copy-templates",
     "typecheck": "tsc --noEmit",
     "prepare": "is-ci || husky install",
