@@ -1,4 +1,4 @@
-{{#if chakraUI.answers.enabled}}import { {{chakraUI.answers.componentName}} as Chakra{{chakraUI.answers.componentName}}, {{chakraUI.answers.componentName}}Props } from "@chakra-ui/react";{{/if}}
-{{#if materialUI.answers.enabled}}import { {{materialUI.answers.componentName}} as Material{{materialUI.answers.componentName}}, {{materialUI.answers.componentName}}Props } from "@mui/material/{{materialUI.answers.componentName}}";{{/if}}
-{{#if reactJS.answers.createInterface}}import * as compInterface from "./{{ general.answers.componentName }}{{ reactJS.answers.interfaceFileSuffix }}";{{/if}}
-{{#if css.answers.cssModuleSupport}}import styles from "./{{ general.answers.componentName }}{{ css.answers.fileSuffix }}.{{ css.answers.fileExtension }}";{{/if}}
+{{#if chakraUI}}{{#if chakraUI.answers.enabled}}import { {{chakraUI.answers.componentName}} as Chakra{{chakraUI.answers.componentName}}, {{chakraUI.answers.componentName}}Props } from "@chakra-ui/react";{{/if}}{{/if}}
+{{#if materialUI}}{{#if materialUI.answers.enabled}}import { {{materialUI.answers.componentName}} as Material{{materialUI.answers.componentName}}, {{materialUI.answers.componentName}}Props } from "@mui/material/{{materialUI.answers.componentName}}";{{/if}}{{/if}}
+{{#if reactJS}}{{#if reactJS.answers.createInterface}}import * as compInterface from "./{{ general.answers.componentName }}{{ reactJS.answers.interfaceFileSuffix }}";{{/if}}{{/if}}
+{{#if css}}{{#if css.answers.cssModuleSupport}}import styles from "./{{ general.answers.componentName }}{{ css.answers.fileSuffix }}.{{ css.answers.fileExtension }}";{{/if}}{{/if}}

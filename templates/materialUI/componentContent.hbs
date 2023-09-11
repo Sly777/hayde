@@ -1,6 +1,6 @@
-{{#if materialUI.answers.enabled}}
+{{#if materialUI}}{{#if materialUI.answers.enabled}}
 <Material{{materialUI.answers.componentName}} {{#each reactJS.answers.propList}}{{this}}={ {{this}} } {{/each}}{{#if
   css.answers.cssModuleSupport}}className={styles.{{general.answers.componentName}} }{{/if}}>
   {text}
 </Material{{materialUI.answers.componentName}}>
-{{/if}}
+{{/if}}{{/if}}

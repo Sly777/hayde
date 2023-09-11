@@ -6,7 +6,10 @@ import {
   PluginExport,
   templates,
 } from "@/creatorSettings/creatorSettings.type";
-import { checkTemplate } from "@/internalFeatures/templatesLibrary";
+import {
+  addAdditionalHelpers,
+  checkTemplate,
+} from "@/internalFeatures/templatesLibrary";
 import {
   getCreatorSettings,
   replaceDefaultsWithDefaultValues,
@@ -29,6 +32,7 @@ export class CliTool {
 
   constructor() {
     console.clear();
+    addAdditionalHelpers();
     cfonts.say("Hayde!", { font: "tiny", colors: ["#EBC16F"] });
   }
 

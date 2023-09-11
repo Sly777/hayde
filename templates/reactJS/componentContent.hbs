@@ -1,5 +1,5 @@
 {{#if reactJS.answers.hasNoStyleLibrary}}
-<div {{#if css.answers.cssModuleSupport}}className={ styles.{{general.answers.componentName}} }{{/if}}>
+<div {{#if css}}{{#if css.answers.cssModuleSupport}}className={ styles.{{general.answers.componentName}} }{{/if}}{{/if}}>
   {text}
 </div>
 {{/if}}

@@ -13,15 +13,27 @@ import {
 } from "../dataLibrary";
 import { errorLog } from "@/helper";
 
+export function addAdditionalHelpers() {
+  Handlebars.registerHelper({
+    isObject: function (value) {
+      return typeof value === "object";
+    },
+    blockHelperMissing: function (context, options) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      return options.data.root[options.name] === undefined ? false : true;
+    },
+  });
+}
+
 export function checkTemplate(
   templateName: string,
-  settings: CreatorSettings,
+  settings: CreatorSettings
 ): boolean {
   const generalSettings = getSpecificPluginSettings(settings, "general");
   try {
     if (
       fs.existsSync(
-        `${__dirname}${generalSettings.templatesPath}/${templateName}.hbs`,
+        `${__dirname}${generalSettings.templatesPath}/${templateName}.hbs`
       )
     ) {
       return true;
@@ -29,7 +41,7 @@ export function checkTemplate(
       fs.existsSync(
         `${path.dirname("./")}${
           generalSettings.templatesPath
-        }/${templateName}.hbs`,
+        }/${templateName}.hbs`
       )
     ) {
       return true;
@@ -47,11 +59,11 @@ export async function compileTemplate(
   globalSettings: CreatorSettings,
   data: CreatorAnswers,
   additionalData: object = {},
-  prettierEnabled: boolean = true,
+  prettierEnabled: boolean = true
 ) {
   const generalAnswers = getSpecificPluginAnswers(
     data,
-    "general",
+    "general"
   ) as GeneralSettings;
 
   let dirName = __dirname;

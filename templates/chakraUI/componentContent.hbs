@@ -1,6 +1,6 @@
-{{#if chakraUI.answers.enabled}}
+{{#if chakraUI}}{{#if chakraUI.answers.enabled}}
 <Chakra{{chakraUI.answers.componentName}} {{#each reactJS.answers.propList}}{{this}}={ {{this}} } {{/each}}{{#if
   css.answers.cssModuleSupport}}className={styles.{{general.answers.componentName}} }{{/if}}>
   {text}
 </Chakra{{chakraUI.answers.componentName}}>
-{{/if}}
+{{/if}}{{/if}}

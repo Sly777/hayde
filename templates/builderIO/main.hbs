@@ -1,5 +1,5 @@
 import { Component as BuilderIoComponent } from "@builder.io/sdk";
-
+{{#if builderIO}}
 export const builderIoSettings: BuilderIoComponent = {
   name: "{{ builderIO.answers.name }}",
   override: {{ builderIO.answers.override }},
@@ -10,3 +10,4 @@ export const builderIoSettings: BuilderIoComponent = {
     {{/each}}
   ],
 };
+{{/if}}
