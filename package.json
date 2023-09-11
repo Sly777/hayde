@@ -27,14 +27,13 @@
     "version-it": "yarn build && yarn version --patch && git push --follow-tags"
   },
   "dependencies": {
+    "cfonts": "3.2.0",
     "commander": "11.0.0",
     "emmet": "2.4.6",
-    "figlet": "1.6.0",
     "handlebars": "4.7.8",
     "inquirer": "9.2.11"
   },
   "devDependencies": {
-    "@types/figlet": "1.5.6",
     "@types/inquirer": "9.0.3",
     "@types/node": "20.6.0",
     "@typescript-eslint/eslint-plugin": "6.6.0",

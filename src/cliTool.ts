@@ -1,4 +1,4 @@
-import figlet from "figlet";
+import cfonts from "cfonts";
 import defaultSettings from "@/creatorSettings/creatorSettings";
 import {
   CreatorSettings,
@@ -29,7 +29,7 @@ export class CliTool {
 
   constructor() {
     console.clear();
-    console.log(figlet.textSync("Hayde", { font: "Slant" }));
+    cfonts.say("Hayde!", { font: "tiny", colors: ["#EBC16F"] });
   }
 
   private checkBeforeStart() {
