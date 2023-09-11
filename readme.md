@@ -13,8 +13,9 @@
 
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=Sly777_hayde)](https://sonarcloud.io/summary/new_code?id=Sly777_hayde)
 
-
 Hayde is a CLI tool that allows you to create React components quickly and easily. With Hayde, you can focus on writing code instead of setting up boilerplate files.
+
+<img src="https://github.com/Sly777/hayde/assets/694940/32e70b96-ed25-4897-95c4-76b7500bd925" width="300" alt="Hayde Quick Start" />
 
 ## Quick Start
 
