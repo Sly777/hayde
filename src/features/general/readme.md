@@ -20,8 +20,10 @@ And then add `general` to the plugins array. **This plugin is required for the H
 
 ### Options
 
-| Option            | Description | Default            | Type   |
-|-------------------|-------------|--------------------|--------|
-| srcFolderLocation | -           | `./src/components` | string |
-| componentName     | -           | -                  | string |
-| templatesPath     | -           | `/templates`       | string |
+| Option                                | Description | Default                     | Type   |
+| ------------------------------------- | ----------- | --------------------------- | ------ |
+| srcFolderLocation                     | -           | `./src/components`          | string |
+| componentName                         | -           | -                           | string |
+| templatesPath                         | -           | `/templates`                | string |
+| importOnBuilderRegistryTemplateName   | -           | `importOnBuilderRegistry`   | string |
+| registerOnBuilderRegistryTemplateName | -           | `registerOnBuilderRegistry` | string |

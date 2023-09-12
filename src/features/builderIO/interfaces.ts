@@ -8,6 +8,8 @@ export interface IPluginOptions {
   override?: boolean;
   addChildren?: boolean;
   enabled?: boolean;
+  builderRegistryPath?: string;
+  builderRegistryComponentsPath?: string;
 }
 
 export type OutAnswers = {
@@ -20,6 +22,10 @@ export interface ISettings extends IPluginOptions {
   fileSuffix: string;
   templateName: string;
   templateFolder: string;
+  importOnBuilderRegistryTemplateName: string;
+  registerOnBuilderRegistryTemplateName: string;
+  importOnBuilderRegistryTag: string;
+  registerOnBuilderRegistryTag: string;
 }
 
 export const defaultSettings: ISettings = {
@@ -27,4 +33,8 @@ export const defaultSettings: ISettings = {
   templateName: "main",
   templateFolder: "builderIO",
   enabled: false,
+  importOnBuilderRegistryTemplateName: "importOnBuilderRegistry",
+  registerOnBuilderRegistryTemplateName: "registerOnBuilderRegistry",
+  importOnBuilderRegistryTag: "builderIOImports",
+  registerOnBuilderRegistryTag: "builderIORegisterComponents",
 };

@@ -10,7 +10,8 @@ import { IPluginOptions, ISettings, OutAnswers } from "./interfaces";
 import inquirer from "inquirer";
 import { questions } from "./questions";
 import { compileTemplate } from "@/internalFeatures/templatesLibrary";
-import { createFile } from "@/internalFeatures/fsLibrary";
+import { checkFileAccess, createFile } from "@/internalFeatures/fsLibrary";
+import { appendNewData } from "@/internalFeatures/tags";
 
 export { questions } from "./questions";
 export { defaultSettings } from "./interfaces";
@@ -50,8 +51,34 @@ export async function runPlugin({
     answers.templateName,
     answers.templateFolder,
     globalSettings,
-    allAnswers,
+    allAnswers
   );
+  const bioImportContent = await compileTemplate(
+    answers.importOnBuilderRegistryTemplateName,
+    answers.templateFolder,
+    globalSettings,
+    allAnswers
+  );
+  const bioRegisterContent = await compileTemplate(
+    answers.registerOnBuilderRegistryTemplateName,
+    answers.templateFolder,
+    globalSettings,
+    allAnswers
+  );
+
+  if (checkFileAccess(answers.builderRegistryPath)) {
+    appendNewData(
+      answers.builderRegistryPath,
+      answers.importOnBuilderRegistryTag,
+      bioImportContent
+    );
+
+    appendNewData(
+      answers.builderRegistryPath,
+      answers.registerOnBuilderRegistryTag,
+      bioRegisterContent
+    );
+  }
 
   createFile(allAnswers, `${answers.fileSuffix}.ts`, builderIoContent);
 }

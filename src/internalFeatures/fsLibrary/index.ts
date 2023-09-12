@@ -7,7 +7,15 @@ import { formatContent } from "../contentFormatter";
 
 export function checkFolder(folderPath: string): boolean {
   try {
-    return fs.existsSync(folderPath) ? true : false;
+    return fs.existsSync(folderPath);
+  } catch {
+    return false;
+  }
+}
+
+export function checkFileAccess(filePath: string): boolean {
+  try {
+    return fs.existsSync(filePath);
   } catch {
     return false;
   }

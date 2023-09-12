@@ -36,6 +36,7 @@ This will launch the CLI tool and guide you through the process of creating a ne
 - **Customizable** 🪄 - Hayde is highly customizable. You can configure it to suit your needs and preferences.
 - **Modular** 🧩 - Hayde is modular. You can use it with any React project (create-react-app, next.js, astro, ...etc.), regardless of its size or complexity. Also it's easy to extend Hayde with new features.
 - **No Installation Required** 📦 - Hayde doesn't require any installation. You can use it right away without having to install anything.
+- **Auto Import** 🤖 - Hayde automatically imports your components into your project if you want. You just need to add tags into target file and voila! You can check it on [BuilderIO](./src/features/builderIO/) integration.
 
 ## Table of Contents
 
