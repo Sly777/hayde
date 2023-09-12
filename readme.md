@@ -119,7 +119,7 @@ For CLI Arguments, please check the [CLI arguments](./docs/cli-arguments.md) pag
 
 ## How to create custom plugin
 
-For creating custom plugin, please check the [custom plugin](./docs/how-to-create-custom-plugin.md) page. You can create your own libraries' plugin easily with extensive functionally and [Handlebars](https://handlebarsjs.com/) template engine.
+For creating custom plugin, please check the [custom plugin](./docs/how-to-create-custom-plugin.md) page. You can create your own libraries' plugin easily with extensive functionality and [Handlebars](https://handlebarsjs.com/) template engine.
 
 Also; you can create your hayde plugin with hayde. Just update your `.hayde.json` file like below:
 
