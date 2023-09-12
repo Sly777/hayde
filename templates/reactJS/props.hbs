@@ -10,6 +10,7 @@ type Props = {
 };
 {{/unless}}
 
+{{#unless reactJS.answers.createInterface }}
 const defaultProps: Props = {
 {{#if reactJS.answers.propList }}
 {{#each reactJS.answers.propList}}
@@ -19,3 +20,4 @@ const defaultProps: Props = {
   text: "hello hayde",
 {{/if}}
 };
+{{/unless}}

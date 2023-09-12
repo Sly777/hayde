@@ -1,7 +1,11 @@
 function {{ general.answers.componentName }}({
+{{#if reactJS.answers.propList }}
 {{#each reactJS.answers.propList}}
   {{ this }} = defaultProps.{{ this }},
 {{/each}}
+{{else}}
+  text = defaultProps.text,
+{{/if}}
 }: Props) {
   return (
     {{ componentContent }}

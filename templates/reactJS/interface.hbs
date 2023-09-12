@@ -11,3 +11,13 @@ export type Props = {
   text?: string;
 {{/if}}
 };
+
+export const defaultProps: Props = {
+{{#if reactJS.answers.propList }}
+{{#each reactJS.answers.propList}}
+  {{ this }}: "",
+{{/each}}
+{{else}}
+  text: "hello hayde",
+{{/if}}
+};
