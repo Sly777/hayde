@@ -57,12 +57,12 @@ export async function compileTemplate(
   templateName: string,
   templateFolder: string,
   globalSettings: CreatorSettings,
-  data: CreatorAnswers,
+  allAnswers: CreatorAnswers,
   additionalData: object = {},
   prettierEnabled: boolean = true
 ) {
   const generalAnswers = getSpecificPluginAnswers(
-    data,
+    allAnswers,
     "general"
   ) as GeneralSettings;
 
@@ -84,7 +84,7 @@ export async function compileTemplate(
   });
   const compiledTemplate = template({
     ...generalAnswers,
-    ...data,
+    ...allAnswers,
     ...additionalData,
   });
 

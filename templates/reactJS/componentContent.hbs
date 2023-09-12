@@ -1,5 +1,9 @@
 {{#if reactJS.answers.hasNoStyleLibrary}}
 <div {{#if css}}{{#if css.answers.cssModuleSupport}}className={ styles.{{general.answers.componentName}} }{{/if}}{{/if}}>
-  {text}
+{{#if reactJS.answers.propList }}
+  {{#with reactJS.answers.propList.[0]}}{ {{this}} }{{/with}}
+{{else}}
+  <p>{ text }</p>
+{{/if}}
 </div>
 {{/if}}
