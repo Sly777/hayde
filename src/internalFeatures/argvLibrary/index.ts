@@ -4,7 +4,7 @@ export function prepareArgv(): void {
   program
     .description("A CLI tool to generate components quickly and easily.")
     .option("--debug", "output extra debugging", false)
-    .option("--noPrettier", "disable prettier formatting", false);
+    .option("--noFormat", "disable formatting on file content", false);
 
   program.parse();
 }
@@ -19,7 +19,7 @@ export function getArgvOptions(): ArgvOptions {
 
 export enum ArgvOptionName {
   debug = "debug",
-  noPrettier = "noPrettier",
+  noFormat = "noFormat",
 }
 
 export function getArgvOption(optionName: ArgvOptionName): string | boolean {

@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-import { prettierFormat } from "@/internalFeatures/prettier";
 import Handlebars from "handlebars";
 import {
   CreatorAnswers,
@@ -11,7 +10,6 @@ import {
   getSpecificPluginAnswers,
   getSpecificPluginSettings,
 } from "../dataLibrary";
-import { errorLog } from "@/helper";
 
 export function addAdditionalHelpers() {
   Handlebars.registerHelper({
@@ -53,14 +51,14 @@ export function checkTemplate(
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/require-await
 export async function compileTemplate(
   templateName: string,
   templateFolder: string,
   globalSettings: CreatorSettings,
   allAnswers: CreatorAnswers,
-  additionalData: object = {},
-  prettierEnabled: boolean = true
-) {
+  additionalData: object = {}
+): Promise<string> {
   const generalAnswers = getSpecificPluginAnswers(
     allAnswers,
     "general"
@@ -88,14 +86,5 @@ export async function compileTemplate(
     ...additionalData,
   });
 
-  if (!prettierEnabled) {
-    return compiledTemplate;
-  }
-
-  try {
-    return await prettierFormat(compiledTemplate);
-  } catch {
-    errorLog(`Error formatting file ${fileName} on Prettier`);
-    return compiledTemplate;
-  }
+  return compiledTemplate;
 }

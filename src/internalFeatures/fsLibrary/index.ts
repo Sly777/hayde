@@ -3,6 +3,7 @@ import { CreatorAnswers } from "@/creatorSettings/creatorSettings.type";
 import { ISettings as GeneralSettings } from "@/features/general/interfaces";
 import { ISettings as PluginCreatorSettings } from "@/features/createPlugin/interfaces";
 import { getSpecificPluginAnswers } from "../dataLibrary";
+import { formatContent } from "../contentFormatter";
 
 export function checkFolder(folderPath: string): boolean {
   try {
@@ -56,7 +57,7 @@ export function createFile(
   }
 
   try {
-    fs.writeFileSync(fullPath, fileContent);
+    fs.writeFileSync(fullPath, formatContent(fileContent));
   } catch {
     throw new Error(`Error creating file ${fileName} - ${fullPath}`);
   }

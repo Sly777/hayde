@@ -39,10 +39,12 @@
     "commander": "11.0.0",
     "emmet": "2.4.6",
     "handlebars": "4.7.8",
-    "inquirer": "9.2.11"
+    "inquirer": "9.2.11",
+    "js-beautify": "1.14.9"
   },
   "devDependencies": {
     "@types/inquirer": "9.0.3",
+    "@types/js-beautify": "1.14.0",
     "@types/node": "20.6.0",
     "@typescript-eslint/eslint-plugin": "6.6.0",
     "@typescript-eslint/parser": "6.6.0",

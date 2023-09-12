@@ -1,3 +1,13 @@
 export interface I{{general.answers.componentName}} {
   name: string;
 }
+
+export type Props = {
+{{#if reactJS.answers.propList }}
+{{#each reactJS.answers.propList}}
+  {{ this }}?: string;
+{{/each}}
+{{else}}
+  text?: string;
+{{/if}}
+};
