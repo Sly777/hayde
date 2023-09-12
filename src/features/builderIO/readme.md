@@ -49,15 +49,16 @@ and then add `importOnBuilderRegistryTag` and `registerOnBuilderRegistryTag` tag
 
 ### Options
 
-| Option                       | Description | Default                       | Type    |
-| ---------------------------- | ----------- | ----------------------------- | ------- |
-| name                         | -           | `Component Name`              | string  |
-| override                     | -           | `true`                        | boolean |
-| addChildren                  | -           | `true`                        | boolean |
-| fileSuffix                   | -           | `.builderIo`                  | string  |
-| templateName                 | -           | `main`                        | string  |
-| templateFolder               | -           | `builderIO`                   | string  |
-| builderRegistryPath          | -           | `./src/builderRegistry.ts`    | string  |
-| importOnBuilderRegistryTag   | -           | `builderIOImports`            | string  |
-| registerOnBuilderRegistryTag | -           | `builderIORegisterComponents` | string  |
+| Option                        | Description | Default                       | Type    |
+| ----------------------------- | ----------- | ----------------------------- | ------- |
+| name                          | -           | `Component Name`              | string  |
+| override                      | -           | `true`                        | boolean |
+| addChildren                   | -           | `true`                        | boolean |
+| fileSuffix                    | -           | `.builderIo`                  | string  |
+| templateName                  | -           | `main`                        | string  |
+| templateFolder                | -           | `builderIO`                   | string  |
+| builderRegistryPath           | -           | `./src/builderRegistry.ts`    | string  |
+| importOnBuilderRegistryTag    | -           | `builderIOImports`            | string  |
+| registerOnBuilderRegistryTag  | -           | `builderIORegisterComponents` | string  |
+| builderRegistryComponentsPath | -           | `./components`                | string  |
 
