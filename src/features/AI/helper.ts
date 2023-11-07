@@ -1,3 +1,5 @@
+import { getArgvOptions } from "@/internalFeatures/argvLibrary";
+import { BaseLanguageModelParams } from "langchain/dist/base_language";
 import { PromptTemplate } from "langchain/prompts";
 
 export function stripMarkdown(text: string) {
@@ -6,6 +8,11 @@ export function stripMarkdown(text: string) {
     p1.replaceAll(/```[a-z]*\n|```/g, "").trim()
   );
 }
+
+const argvOptions = getArgvOptions();
+export const defaultBaseConfig: BaseLanguageModelParams = {
+  verbose: argvOptions.debug,
+};
 
 export function extractCodeBlock(response: string) {
   const codeBlockRegex =
@@ -20,7 +27,7 @@ export function extractCodeBlock(response: string) {
   return codeBlocks.length > 0 ? codeBlocks.join("\n\n") : response;
 }
 
-export function createQuestionPrompt() {
+export function createComponentPrompt() {
   const questionTemplate = `
     Create functional react component with these information on {tsOrJs}.
 

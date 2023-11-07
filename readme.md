@@ -28,6 +28,18 @@ npx hayde@latest
 
 This will launch the CLI tool and guide you through the process of creating a new React component.
 
+#### Local Installation
+
+If you want to install Hayde locally, you can run the following command:
+
+```bash
+npm install hayde --save-dev
+```
+or
+```bash
+yarn add hayde --dev
+```
+
 ## Features
 
 - **Quick and Easy** 🚀 - Hayde allows you to create React components quickly and easily. With Hayde, you can focus on writing code instead of setting up boilerplate files.
@@ -42,6 +54,7 @@ This will launch the CLI tool and guide you through the process of creating a ne
 
 - [Hayde](#hayde)
   - [Quick Start](#quick-start)
+      - [Local Installation](#local-installation)
   - [Features](#features)
   - [Table of Contents](#table-of-contents)
   - [Settings](#settings)
