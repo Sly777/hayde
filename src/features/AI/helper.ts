@@ -41,7 +41,7 @@ export function createComponentPrompt() {
 
     Please include error handling, loading states, and comments within the code for clarity. Prefer functional components with hooks for state management over class components. Ensure the code is modular and easily testable.
 
-    If it's typescript, Include type definitions for all props and state objects, and use async/await for asynchronous operations. If it's javascript, use PropTypes for all props and state objects, and use promises for asynchronous operations. For state management, use React Context if needed.
+    If it's typescript, Include type definitions for all props and state objects, and use async/await for asynchronous operations. If it's javascript, use PropTypes for all props and state objects, and use promises for asynchronous operations.
 
     Before sending response, please verify the code that you created. If it's not correct, please send the correct code.
 

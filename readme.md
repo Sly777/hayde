@@ -131,8 +131,8 @@ You can create React components with the following libraries, you just need to a
 - [React.js](https://reactjs.org/) - [Source](./src/features/reactJS/)
 - CSS and SCSS support - [Source](./src/features/css/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [OpenAI](https://platform.openai.com)
-- [Ollama](https://ollama.ai)
+- [OpenAI](https://platform.openai.com) - [Source](./src/features/AI/)
+- [Ollama](https://ollama.ai) - [Source](./src/features/AI/)
 
 ## NPM Scripts
 
