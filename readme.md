@@ -23,7 +23,7 @@ Hayde is a CLI tool that allows you to create React components quickly and easil
 To use Hayde, simply run the following command:
 
 ```bash
-npx hayde
+npx hayde@latest
 ```
 
 This will launch the CLI tool and guide you through the process of creating a new React component.
