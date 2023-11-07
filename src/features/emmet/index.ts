@@ -15,11 +15,12 @@ import {
 } from "./interfaces";
 import { questions } from "./questions";
 import inquirer from "inquirer";
-import { errorLog } from "@/helper";
+import { logger } from "@/helper";
 
 export { defaultSettings } from "./interfaces";
 
 export const pluginName = "emmet";
+const log = logger(pluginName);
 
 export async function initPlugin({
   options,
@@ -52,7 +53,7 @@ export async function runPlugin({
   const { area, componentContentTag } = answers;
 
   if (!code) {
-    errorLog("No emmet code provided");
+    log("No emmet code provided");
     throw new Error("No emmet code provided");
   }
 

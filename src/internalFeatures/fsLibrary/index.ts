@@ -24,11 +24,13 @@ export function checkFileAccess(filePath: string): boolean {
 interface CreateFileOptions {
   fullName?: boolean;
   isPluginCreator?: boolean;
+  noFormat?: boolean;
 }
 
 const defaultCreateFileOptions: CreateFileOptions = {
   fullName: false,
   isPluginCreator: false,
+  noFormat: false,
 };
 
 export function createFile(
@@ -65,7 +67,7 @@ export function createFile(
   }
 
   try {
-    fs.writeFileSync(fullPath, formatContent(fileContent));
+    fs.writeFileSync(fullPath, formatContent(fileContent, options.noFormat));
   } catch {
     throw new Error(`Error creating file ${fileName} - ${fullPath}`);
   }

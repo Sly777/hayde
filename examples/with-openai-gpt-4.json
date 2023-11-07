@@ -1,0 +1,17 @@
+{
+  "plugins": [
+    {
+      "name": "general",
+      "options": {
+        "srcFolderLocation": "./src/components"
+      }
+    },
+    {
+      "name": "AI",
+      "options": {
+        "aiTool": "openAI",
+        "modelName": "gpt-4"
+      }
+    }
+  ]
+}

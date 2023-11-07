@@ -86,5 +86,6 @@ export async function runPlugin({
   createFile(allAnswers, `readme.md`, readmeContent, {
     fullName: true,
     isPluginCreator: true,
+    noFormat: true,
   });
 }

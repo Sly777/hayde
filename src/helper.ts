@@ -11,16 +11,19 @@ export function removeUnnecessaryHandlebarsAdditionOnEnd(content: string) {
   return content;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function log(...params: any[]): void {
+export function logger(prefix: string, isError = false, disabled = false) {
   const options = getArgvOptions();
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-  if (options.debug) console.log(...params);
+  return (...args: unknown[]) => {
+    if (!options.debug) return;
+    if (disabled) return;
+    if (isError) {
+      console.error(`[Hayde/${prefix}]`, ...args);
+    } else {
+      console.log(`[Hayde/${prefix}]`, ...args);
+    }
+  };
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function errorLog(...params: any[]): void {
-  const options = getArgvOptions();
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-  if (options.debug) console.error(...params);
+export function publicLog(...args: unknown[]) {
+  console.log("⭐", ...args);
 }

@@ -19,10 +19,10 @@ const jsBeautifyOptions: js_beautify.JSBeautifyOptions = {
   indent_empty_lines: false,
 };
 
-export function formatContent(fileContent: string) {
+export function formatContent(fileContent: string, noFormat: boolean = false) {
   const argNoFormat = getArgvOption(ArgvOptionName.noFormat);
 
-  if (!argNoFormat) {
+  if (!argNoFormat && !noFormat) {
     return js_beautify(fileContent, jsBeautifyOptions);
   }
 

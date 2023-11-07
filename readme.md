@@ -12,7 +12,6 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/Sly777/hayde/badge.svg)](https://snyk.io/test/github/Sly777/hayde)
 [![npm version](https://badge.fury.io/js/hayde.svg)](https://badge.fury.io/js/hayde)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
-
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=Sly777_hayde)](https://sonarcloud.io/summary/new_code?id=Sly777_hayde)
 
 Hayde is a CLI tool that allows you to create React components quickly and easily. With Hayde, you can focus on writing code instead of setting up boilerplate files.
@@ -36,7 +35,8 @@ This will launch the CLI tool and guide you through the process of creating a ne
 - **Customizable** 🪄 - Hayde is highly customizable. You can configure it to suit your needs and preferences.
 - **Modular** 🧩 - Hayde is modular. You can use it with any React project (create-react-app, next.js, astro, ...etc.), regardless of its size or complexity. Also it's easy to extend Hayde with new features.
 - **No Installation Required** 📦 - Hayde doesn't require any installation. You can use it right away without having to install anything.
-- **Auto Import** 🤖 - Hayde automatically imports your components into your project if you want. You just need to add tags into target file and voila! You can check it on [BuilderIO](./src/features/builderIO/) integration.
+- **Auto Import** ⏩ - Hayde automatically imports your components into your project if you want. You just need to add tags into target file and voila! You can check it on [BuilderIO](./src/features/builderIO/) integration.
+- **AI Support** 🤖 - Hayde supports AI tools such as OpenAI (gpt-3.5 & gpt-4) and Ollama. You can create your components with AI easily! You can check it on [AI](./src/features/AI/) integration.
 
 ## Table of Contents
 
@@ -79,8 +79,17 @@ Here's an example of what the .hayde.json file might look like:
     "chakraUI"
   ]
 }
+```
 
+or if you want to use AI only with hayde, you can use `.hayde.json` file like below:
 
+```json
+{
+  "plugins": [
+    "general",
+    "AI"
+  ]
+}
 ```
 
 This file sets the default options for Hayde to avoid having to enter them every time you run the tool. And when you create a new component, Hayde will create react component with Chakra UI and interface support on `./src` folder.
@@ -109,10 +118,12 @@ You can create React components with the following libraries, you just need to a
 - [React.js](https://reactjs.org/) - [Source](./src/features/reactJS/)
 - CSS and SCSS support - [Source](./src/features/css/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [OpenAI](https://platform.openai.com)
+- [Ollama](https://ollama.ai)
 
 ## NPM Scripts
 
-For NPM Scripts, please check the [npm scripts](./docs/npm-scripts.md) page. You can use Hayde with npm scripts easily.
+You can call any script you want before or after component creation! For NPM Scripts, please check the [npm scripts](./docs/npm-scripts.md) page.
 
 ## CLI Arguments
 

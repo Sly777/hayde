@@ -1,7 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
 import { exec } from "node:child_process";
-import { errorLog, log } from "@/helper";
+import { logger } from "@/helper";
+
+const log = logger("RSFP");
 
 export enum ScriptNames {
   postComponentCreate = "post-component-creation",
@@ -23,16 +25,16 @@ export function runScriptFromPackagejson(scriptName: string) {
       // Execute command
       exec(`npm run ${scriptName}`, (error, stdout, stderr) => {
         if (error) {
-          errorLog(`Error occurred: ${error.message}`);
+          log(`Error occurred: ${error.message}`);
           return;
         }
         if (stdout) log(`stdout: ${stdout}`);
         if (stderr) log(`stderr: ${stderr}`);
       });
     } else {
-      // logging(`No "${scriptName}" script found in package.json.`);
+      log(`No "${scriptName}" script found in package.json.`);
     }
   } else {
-    // loggingg("No package.json file found.");
+    log("No package.json file found.");
   }
 }

@@ -10,11 +10,13 @@ import inquirer from "inquirer";
 import { questions } from "./questions";
 import { compileTemplate } from "@/internalFeatures/templatesLibrary";
 import { createFile } from "@/internalFeatures/fsLibrary";
+import { logger } from "@/helper";
 
 export { questions } from "./questions";
 export { defaultSettings } from "./interfaces";
 
 export const pluginName = "{{ createPlugin.answers.pluginName }}";
+const log = logger(pluginName);
 
 export async function initPlugin({
   options,

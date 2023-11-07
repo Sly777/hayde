@@ -1,0 +1,17 @@
+{
+  "plugins": [
+    {
+      "name": "general",
+      "options": {
+        "srcFolderLocation": "./src/components"
+      }
+    },
+    {
+      "name": "AI",
+      "options": {
+        "aiTool": "ollama",
+        "modelName": "llama2"
+      }
+    }
+  ]
+}

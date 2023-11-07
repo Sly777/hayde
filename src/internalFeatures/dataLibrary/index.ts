@@ -5,7 +5,9 @@ import {
   CreatorSettings,
 } from "@/creatorSettings/creatorSettings.type";
 import defaultSettings from "@/creatorSettings/creatorSettings";
-import { errorLog } from "@/helper";
+import { logger } from "@/helper";
+
+const log = logger("Data Library");
 
 export function getCreatorSettings(): CreatorSettings {
   const fullPath = `${path.dirname("./")}/.hayde.json`;
@@ -21,7 +23,7 @@ export function getCreatorSettings(): CreatorSettings {
     ) as CreatorSettings;
     return { ...settingsObj };
   } catch (error) {
-    errorLog("Error parsing .hayde.json file", error);
+    log("Error parsing .hayde.json file", error);
     throw new Error("Error parsing .hayde.json file");
   }
 }

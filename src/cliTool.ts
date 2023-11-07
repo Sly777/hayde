@@ -18,8 +18,10 @@ import {
   ScriptNames,
   runScriptFromPackagejson,
 } from "@/internalFeatures/runScriptFromPackage";
-import { errorLog, log } from "./helper";
+import { logger, publicLog } from "./helper";
 import { getArgvOptions } from "./internalFeatures/argvLibrary";
+
+const log = logger("CLI Tool", true);
 
 /**
  * A class representing a CLI tool for creating components with various options.
@@ -56,7 +58,7 @@ export class CliTool {
           require(`./features/${pluginName}/index.ts`) as PluginExport;
 
         if (!runPlugin) {
-          errorLog(`Plugin "${pluginName}" does not have a runPlugin()`);
+          log(`Plugin "${pluginName}" does not have a runPlugin()`);
           continue;
         }
 
@@ -86,7 +88,7 @@ export class CliTool {
 
   private finish() {
     runScriptFromPackagejson(ScriptNames.postComponentCreate);
-    console.log("\n\nComponent created successfully.");
+    publicLog("Component created successfully.");
   }
 
   private async askQuestions() {
@@ -102,7 +104,7 @@ export class CliTool {
         const pluginOptions = typeof plugin === "string" ? {} : plugin.options;
 
         if (!initPlugin) {
-          errorLog(`Plugin "${pluginName}" does not have an initPlugin()`);
+          log(`Plugin "${pluginName}" does not have an initPlugin()`);
           continue;
         }
 
@@ -125,7 +127,7 @@ export class CliTool {
   }
 
   public async run() {
-    console.log(`\n${this.createdBy}\n\n`);
+    publicLog(`${this.createdBy}\n\n`);
 
     const ArgvOptions = getArgvOptions();
     log("CLI script options:", ArgvOptions);
