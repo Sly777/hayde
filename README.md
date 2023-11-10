@@ -1,20 +1,6 @@
----
-layout:
-  title:
-    visible: false
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Hayde
 
-![Hayde\_Social\_Preview](https://github.com/Sly777/hayde/assets/694940/e843d06a-7d97-48ef-8d15-e4ca5fc8d28b)
+![](https://github.com/Sly777/hayde/assets/694940/e843d06a-7d97-48ef-8d15-e4ca5fc8d28b)
 
 Hayde is a CLI tool that allows you to create React components quickly and easily. With Hayde, you can focus on writing code instead of setting up boilerplate files.
 
