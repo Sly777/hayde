@@ -31,10 +31,16 @@ If you want to use Ollama, you need to set `OLLAMA_URL` environment variable. Fo
 
 ### Options
 
-| Option          | Description                              | Default  | Type    |
-| --------------- | ---------------------------------------- | -------- | ------- |
-| aiTool          | AI Tool Name                             | "openAI" | string  |
-| compDescription | Component Description                    | -        | string  |
-| styleLibrary    | "chakraUI", "materialUI", "none"         | -        | string  |
-| isTS            | Do you want to get typescript component? | true     | boolean |
-| modelName       | Model name depends on AI Tool            | -        | string  |
+| Option            | Description                                     | Default  | Type    |
+| ----------------- | ----------------------------------------------- | -------- | ------- |
+| aiTool            | "openAI", "ollama"                              | "openAI" | string  |
+| compDescription   | Component Description                           | -        | string  |
+| styleLibrary      | "chakraUI", "materialUI", "none"                | -        | string  |
+| isTS              | Do you want to get typescript component?        | true     | boolean |
+| modelName         | Model name depends on AI Tool                   | -        | string  |
+| aiCreateStorybook | Do you want story file of component?            | false    | boolean |
+| aiCreateTest      | Do you want test file of component?             | false    | boolean |
+| openAIVisionType  | "url", "fileUpload"                             | "url"    | string  |
+| openAIVisionUrl   | Image URL that will be used by Gpt Vision       | -        | string  |
+| openAIVisionFile  | Image file path that will be used by Gpt Vision | -        | string  |
+| openAIType        | "vision", "text"                                | "text"   | string  |

@@ -1,4 +1,4 @@
-import { ArgvOptionName, getArgvOption } from "../argvLibrary";
+import { ArgvOptionName, getArgvOption } from "../argvLibrary/argvLibrary";
 import js_beautify from "js-beautify";
 
 const jsBeautifyOptions: js_beautify.JSBeautifyOptions = {

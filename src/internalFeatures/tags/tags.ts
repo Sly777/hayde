@@ -1,24 +1,13 @@
 import { NodeType, parse } from "node-html-parser";
 import fs from "node:fs";
-
-export const getHtmlStartTag = (tagName: string) =>
-  `<!-- #hayde-${tagName} -->`;
-export const getHtmlEndTag = (tagName: string) =>
-  `<!-- #hayde-end-${tagName} -->`;
-
-export const getJSStartTag = (tagName: string) =>
-  `// ${getHtmlStartTag(tagName)}`;
-export const getJSEndTag = (tagName: string) => `// ${getHtmlEndTag(tagName)}`;
-
-export enum contentType {
-  html = "html",
-  css = "css",
-  js = "js",
-}
-
-const defaultOptions = {
-  type: contentType.js,
-};
+import {
+  contentType,
+  defaultOptions,
+  getHtmlEndTag,
+  getHtmlStartTag,
+  getJSEndTag,
+  getJSStartTag,
+} from "./tags.types";
 
 export function appendNewData(
   content: string,
@@ -84,3 +73,5 @@ export function appendNewDataToJS(
 
   fs.writeFileSync(filePath, content);
 }
+
+export { contentType } from "./tags.types";

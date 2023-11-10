@@ -1,4 +1,4 @@
-import { getArgvOptions } from "./internalFeatures/argvLibrary";
+import { getArgvOptions } from "./internalFeatures/argvLibrary/argvLibrary";
 
 export function titleCase(text: string) {
   return text[0].toUpperCase() + text.slice(1);

@@ -10,8 +10,8 @@ import {
 import { reactPropQuestions } from "./questions";
 import { PluginRunParams } from "@/creatorSettings/creatorSettings.type";
 import { removeUnnecessaryHandlebarsAdditionOnEnd } from "@/helper";
-import { compileTemplate } from "@/internalFeatures/templatesLibrary";
-import { createFile } from "@/internalFeatures/fsLibrary";
+import { compileTemplate } from "@/internalFeatures/templatesLibrary/templatesLibrary";
+import { createFile } from "@/internalFeatures/fsLibrary/fsLibrary";
 
 export async function askReactPropsQuestions(
   options: IPluginOptions

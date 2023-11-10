@@ -1,5 +1,4 @@
 import fs from "node:fs";
-import path from "node:path";
 import Handlebars from "handlebars";
 import {
   CreatorAnswers,
@@ -9,7 +8,12 @@ import { ISettings as GeneralSettings } from "@/features/general/interfaces";
 import {
   getSpecificPluginAnswers,
   getSpecificPluginSettings,
-} from "../dataLibrary";
+} from "../dataLibrary/dataLibrary";
+import { checkPathAccess, defaultFolderPath } from "../fsLibrary/fsLibrary";
+import { logger } from "@/helper";
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const log = logger("Template Library");
 
 export function addAdditionalHelpers() {
   Handlebars.registerHelper({
@@ -30,14 +34,14 @@ export function checkTemplate(
   const generalSettings = getSpecificPluginSettings(settings, "general");
   try {
     if (
-      fs.existsSync(
+      checkPathAccess(
         `${__dirname}${generalSettings.templatesPath}/${templateName}.hbs`
       )
     ) {
       return true;
     } else if (
-      fs.existsSync(
-        `${path.dirname("./")}${
+      checkPathAccess(
+        `${defaultFolderPath()}${
           generalSettings.templatesPath
         }/${templateName}.hbs`
       )
@@ -70,8 +74,8 @@ export async function compileTemplate(
     ? `${generalAnswers.templatesPath}/${fileName}`
     : fileName;
 
-  if (!fs.existsSync(`${dirName}${filePath}`)) dirName = path.dirname("./");
-  if (!fs.existsSync(`${dirName}${filePath}`)) {
+  if (!checkPathAccess(`${dirName}${filePath}`)) dirName = defaultFolderPath();
+  if (!checkPathAccess(`${dirName}${filePath}`)) {
     throw new Error(`Template ${fileName} does not exist.- ${filePath}`);
   }
 

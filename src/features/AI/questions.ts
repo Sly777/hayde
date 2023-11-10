@@ -1,6 +1,8 @@
 import { Answers, ListQuestion, Question } from "inquirer";
 import { AITools, IPluginOptions } from "./interfaces";
 import Separator from "inquirer/lib/objects/separator";
+import { questions as openAIQuestions } from "./models/openAI/openai.questions";
+import { questions as ollamaQuestions } from "./models/ollama/ollama.questions";
 
 export const qAIChoice: ListQuestion<Answers> = {
   when: (answers: IPluginOptions) => answers.aiTool == undefined,
@@ -11,36 +13,12 @@ export const qAIChoice: ListQuestion<Answers> = {
   choices: Object.keys(AITools),
 };
 
-export const qOpenAIModel: ListQuestion<Answers> = {
-  when: (answers: IPluginOptions) => answers.aiTool === AITools.openAI && answers.modelName == undefined,
-  type: "list",
-  name: "modelName",
-  message: "Which model do you want to use?",
-  default: "gpt-4",
-  choices: ["gpt-3.5-turbo", "gpt-4"],
-  filter(val: string) {
-    return val.toLowerCase();
-  },
-};
-
-
-export const qOllamaModel: Question<Answers> = {
-  when: (answers: IPluginOptions) =>
-    answers.aiTool === AITools.ollama && answers.modelName == undefined,
-  type: "input",
-  name: "modelName",
-  message: "Which model do you want to use?",
-  default: "llama2",
-  filter(val: string) {
-    return val.toLowerCase();
-  },
-};
-
 export const qAICompDescription: Question<Answers> = {
   when: (answers: IPluginOptions) => answers.compDescription == undefined,
   type: "input",
   name: "compDescription",
-  message: "Please describe the component (please write it on one line, multiline is not supported):",
+  message:
+    "Please describe the component (please write it on one line, multiline is not supported):",
 };
 
 export const qAIStyleLibrary: ListQuestion<Answers> = {
@@ -62,11 +40,29 @@ export const qAITypescript: Question<Answers> = {
   default: true,
 };
 
+export const qCreateStorybook: Question<Answers> = {
+  when: (answers: IPluginOptions) => answers.aiCreateStorybook == undefined,
+  type: "confirm",
+  name: "aiCreateStorybook",
+  message: "Do you want to use storybook?",
+  default: false,
+};
+
+export const qCreateTestFile: Question<Answers> = {
+  when: (answers: IPluginOptions) => answers.aiCreateTest == undefined,
+  type: "confirm",
+  name: "aiCreateTest",
+  message: "Do you want test file?",
+  default: false,
+};
+
 export const questions: Question[] = [
   qAICompDescription,
   qAIStyleLibrary,
   qAITypescript,
+  qCreateStorybook,
+  qCreateTestFile,
   qAIChoice,
-  qOpenAIModel,
-  qOllamaModel,
+  ...openAIQuestions,
+  ...ollamaQuestions,
 ];

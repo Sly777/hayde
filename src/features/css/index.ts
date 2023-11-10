@@ -14,8 +14,8 @@ import {
 } from "./interfaces";
 import inquirer from "inquirer";
 import { questions } from "./questions";
-import { compileTemplate } from "@/internalFeatures/templatesLibrary";
-import { createFile } from "@/internalFeatures/fsLibrary";
+import { compileTemplate } from "@/internalFeatures/templatesLibrary/templatesLibrary";
+import { createFile } from "@/internalFeatures/fsLibrary/fsLibrary";
 
 export { questions } from "./questions";
 export { defaultSettings } from "./interfaces";
@@ -30,7 +30,7 @@ export async function initPlugin({
 > {
   const answers = (await inquirer.prompt(
     questions,
-    options,
+    options
   )) as Required<ISettings>;
 
   if (answers.sassSupport) {
@@ -56,12 +56,12 @@ export async function runPlugin({
     answers.templateName,
     answers.templateFolder,
     globalSettings,
-    allAnswers,
+    allAnswers
   );
 
   createFile(
     allAnswers,
     `${answers.fileSuffix}.${answers.fileExtension}`,
-    cssContent,
+    cssContent
   );
 }

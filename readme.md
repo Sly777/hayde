@@ -48,7 +48,7 @@ yarn add hayde --dev
 - **Modular** 🧩 - Hayde is modular. You can use it with any React project (create-react-app, next.js, astro, ...etc.), regardless of its size or complexity. Also it's easy to extend Hayde with new features.
 - **No Installation Required** 📦 - Hayde doesn't require any installation. You can use it right away without having to install anything.
 - **Auto Import** ⏩ - Hayde automatically imports your components into your project if you want. You just need to add tags into target file and voila! You can check it on [BuilderIO](./src/features/builderIO/) integration.
-- **AI Support** 🤖 - Hayde supports AI tools such as OpenAI (gpt-3.5 & gpt-4) and Ollama. You can create your components with AI easily! You can check it on [AI](./src/features/AI/) integration.
+- **AI Support** 🤖 - Hayde supports AI tools such as OpenAI (gpt-3.5 & gpt-4) and Ollama. You can create your components with AI easily! You can check it on [AI](./src/features/AI/) integration. **It also supports GPT-4 Vision with URL and File Upload!**
 
 ## Table of Contents
 
@@ -58,6 +58,7 @@ yarn add hayde --dev
   - [Features](#features)
   - [Table of Contents](#table-of-contents)
   - [Settings](#settings)
+  - [Profiles](#profiles)
   - [Examples](#examples)
   - [Supported Libraries on Component Creation](#supported-libraries-on-component-creation)
   - [NPM Scripts](#npm-scripts)
@@ -115,9 +116,25 @@ npx hayde
 
 For more information on the available options, please check the [options](./docs/options.md) page.
 
+## Profiles
+
+If you want to have multiple `.hayde` file, you can just create the file with your profile. For example; you can create two files called `.hayde.json` and `.hayde.ai.json`. And then you can run the following command to use the `.hayde.ai.json` file.
+
+```bash
+npx hayde --profile ai
+```
+
 ## Examples
 
-For Examples, please check the [examples](./examples) folder. You can just copy JSON files from this folder and paste to root folder of your project. Then you can just run Hayde.
+For Examples, please check the [examples](./examples) folder. You can just copy JSON files from this folder and paste to root folder of your project. Then you can just run Hayde. Some examples are;
+
+- [React Component with Chakra UI](./examples/with-react-chakraui.json)
+- [React Component with Material UI](./examples/with-react-materialui.json)
+- [Component with AI (OpenAI GPT-4)](./examples/with-openai-gpt-4.json)
+- [Using Ollama with llama2](./examples/with-ollama-llama2.json)
+- [Component with AI Image Recognition (OpenAI GPT-4 Vision)](./examples/with-openai-vision.json)
+
+You can find more examples in the [examples](./examples) folder.
 
 ## Supported Libraries on Component Creation
 

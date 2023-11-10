@@ -2,18 +2,14 @@ import fs from "node:fs";
 import path from "node:path";
 import { exec } from "node:child_process";
 import { logger } from "@/helper";
+import { checkPathAccess } from "../fsLibrary/fsLibrary";
 
 const log = logger("RSFP");
-
-export enum ScriptNames {
-  postComponentCreate = "post-component-creation",
-  preComponentCreate = "pre-component-creation",
-}
 
 export function runScriptFromPackagejson(scriptName: string) {
   const packageJsonPath = path.resolve(process.cwd(), "package.json");
 
-  if (fs.existsSync(packageJsonPath)) {
+  if (checkPathAccess(packageJsonPath)) {
     // Read package.json
     const packageJsonString = fs.readFileSync(packageJsonPath, "utf8");
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -38,3 +34,5 @@ export function runScriptFromPackagejson(scriptName: string) {
     log("No package.json file found.");
   }
 }
+
+export { ScriptNames } from "./runScriptFromPackage.types";

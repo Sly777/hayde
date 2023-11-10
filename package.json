@@ -36,21 +36,22 @@
     "version": "yarn build"
   },
   "dependencies": {
+    "axios": "1.6.1",
     "cfonts": "3.2.0",
     "commander": "11.1.0",
     "dotenv": "16.3.1",
     "emmet": "2.4.6",
     "handlebars": "4.7.8",
-    "inquirer": "9.2.11",
-    "js-beautify": "1.14.9",
-    "langchain": "0.0.181",
+    "inquirer": "9.2.12",
+    "js-beautify": "1.14.11",
+    "langchain": "0.0.184",
     "node-html-parser": "6.1.11",
     "ora": "7.0.1"
   },
   "devDependencies": {
-    "@types/inquirer": "9.0.6",
-    "@types/js-beautify": "1.14.2",
-    "@types/node": "20.8.10",
+    "@types/inquirer": "9.0.7",
+    "@types/js-beautify": "1.14.3",
+    "@types/node": "20.9.0",
     "@typescript-eslint/eslint-plugin": "6.10.0",
     "@typescript-eslint/parser": "6.10.0",
     "@vercel/ncc": "0.38.1",
@@ -60,7 +61,8 @@
     "husky": "8.0.3",
     "is-ci": "3.0.1",
     "lint-staged": "15.0.2",
-    "tsx": "3.14.0",
+    "tsx": "4.0.0",
+    "type-fest": "4.7.1",
     "typescript": "5.2.2"
   },
   "keywords": [

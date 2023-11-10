@@ -1,25 +1,18 @@
-import { ChatOpenAI, OpenAIChatInput } from "langchain/chat_models/openai";
+import { ChatOpenAI } from "langchain/chat_models/openai";
 import {
   createComponentPrompt,
-  defaultBaseConfig,
-  stripMarkdown,
+  extractCodeBlock,
+  getComponentCreationViaVisionPrompt,
 } from "../../helper";
-import { callAgentFnOptions } from "../../interfaces";
-import { BaseLanguageModelParams } from "langchain/dist/base_language";
-
-function checkEnv(keyName: string) {
-  if (!process.env[keyName]) {
-    throw new Error(
-      `Please set the ${keyName} environment variable to use the OpenAI API.`
-    );
-  }
-  return process.env[keyName];
-}
-
-const defaultConfig: Partial<OpenAIChatInput> & BaseLanguageModelParams = {
-  ...defaultBaseConfig,
-  temperature: 0,
-};
+import { ISettings, callAgentFnOptions } from "../../interfaces";
+import {
+  OpenAIModels,
+  OpenAITypes,
+  OpenAIVisionTypes,
+  callAgentViaVisionFnOptions,
+} from "./openai.types";
+import { checkEnvVariable } from "@/internalFeatures/argvLibrary/argvLibrary";
+import { createVisionPrompt, defaultConfig } from "./openai.helper";
 
 export async function callAgent({
   componentName,
@@ -28,9 +21,9 @@ export async function callAgent({
   modelName,
   isTypescript,
 }: callAgentFnOptions) {
-  if (!checkEnv("OPENAI_API_KEY")) return;
+  if (!checkEnvVariable("OPENAI_API_KEY", "OpenAI API")) return;
 
-  const openAIApiKey = checkEnv("OPENAI_API_KEY") as string;
+  const openAIApiKey = checkEnvVariable("OPENAI_API_KEY");
   const isTypescriptStr = isTypescript ? "typescript" : "javascript";
 
   const llm = new ChatOpenAI({
@@ -47,6 +40,50 @@ export async function callAgent({
     styleLibrary,
     tsOrJs: isTypescriptStr,
   });
+  const content = response.content;
 
-  return stripMarkdown(response.content);
+  return extractCodeBlock(content as string);
+}
+
+export async function callAgentViaVision({
+  componentName,
+  componentDescription,
+  styleLibrary,
+  modelName,
+  isTypescript,
+  openAIVisionUrl,
+  openAIVisionFile,
+  openAIVisionType,
+}: callAgentViaVisionFnOptions) {
+  if (!checkEnvVariable("OPENAI_API_KEY", "OpenAI API")) return;
+
+  const openAIApiKey = checkEnvVariable("OPENAI_API_KEY");
+  const isTypescriptStr = isTypescript ? "typescript" : "javascript";
+  const isFile = openAIVisionType === OpenAIVisionTypes.fileUpload;
+  const imageData = isFile ? openAIVisionFile : openAIVisionUrl;
+
+  const llm = new ChatOpenAI({
+    ...defaultConfig,
+    openAIApiKey,
+    modelName,
+  });
+  const prompt = getComponentCreationViaVisionPrompt({
+    componentDescription,
+    componentName,
+    styleLibrary,
+    tsOrJs: isTypescriptStr,
+  });
+  const fullPrompt = await createVisionPrompt(prompt, imageData, isFile);
+  const response = await llm.invoke([fullPrompt]);
+  const content = response.content;
+
+  return extractCodeBlock(content as string);
+}
+
+export function mappingData(answers: ISettings) {
+  if (answers.openAIType === OpenAITypes.vision) {
+    answers.modelName = OpenAIModels.gpt4V;
+  }
+
+  return answers;
 }

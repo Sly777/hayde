@@ -1,0 +1,21 @@
+{
+  "plugins": [
+    {
+      "name": "general",
+      "options": {
+        "srcFolderLocation": "./src/components"
+      }
+    },
+    {
+      "name": "AI",
+      "options": {
+        "aiTool": "openAI",
+        "openAIType": "vision",
+        "aiCreateStorybook": true,
+        "aiCreateTest": true,
+        "isTS": true,
+        "openAIVisionType": "url"
+      }
+    }
+  ]
+}

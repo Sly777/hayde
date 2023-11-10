@@ -9,9 +9,12 @@ import {
 import { IPluginOptions, ISettings, OutAnswers } from "./interfaces";
 import inquirer from "inquirer";
 import { questions } from "./questions";
-import { compileTemplate } from "@/internalFeatures/templatesLibrary";
-import { checkFileAccess, createFile } from "@/internalFeatures/fsLibrary";
-import { appendNewData } from "@/internalFeatures/tags";
+import { compileTemplate } from "@/internalFeatures/templatesLibrary/templatesLibrary";
+import {
+  checkPathAccess,
+  createFile,
+} from "@/internalFeatures/fsLibrary/fsLibrary";
+import { appendNewData } from "@/internalFeatures/tags/tags";
 
 export { questions } from "./questions";
 export { defaultSettings } from "./interfaces";
@@ -66,7 +69,7 @@ export async function runPlugin({
     allAnswers
   );
 
-  if (checkFileAccess(answers.builderRegistryPath)) {
+  if (checkPathAccess(answers.builderRegistryPath)) {
     appendNewData(
       answers.builderRegistryPath,
       answers.importOnBuilderRegistryTag,

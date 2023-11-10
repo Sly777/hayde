@@ -1,13 +1,22 @@
 import { PluginInitReturn } from "@/creatorSettings/creatorSettings.type";
 import { StyleLibrary } from "@/features/reactJS/interfaces";
 import { IPluginOptions as GeneralOptions } from "@/features/general/interfaces";
+import { IOpenAIOptions } from "./models/openAI/openai.types";
+import { MergeDeep } from "type-fest";
 
-export interface IPluginOptions {
-  modelName?: string;
+type ModelsOptions = MergeDeep<
+  IOpenAIOptions,
+  IOpenAIOptions,
+  { arrayMergeMode: "spread" }
+>;
+
+export interface IPluginOptions extends ModelsOptions {
   compDescription?: string;
   styleLibrary?: StyleLibrary;
   isTS?: boolean;
   aiTool?: AITools;
+  aiCreateStorybook?: boolean;
+  aiCreateTest?: boolean;
 }
 
 export interface ISettings extends IPluginOptions {
@@ -42,4 +51,13 @@ export type callAgentFnOptions = {
   styleLibrary: string;
   modelName: string;
   isTypescript: boolean;
+};
+
+export type callAgentWithCodeFnOptions = {
+  componentName: string;
+  componentDescription: string;
+  styleLibrary: string;
+  modelName: string;
+  isTypescript: boolean;
+  componentCode: string;
 };

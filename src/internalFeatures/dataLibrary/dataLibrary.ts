@@ -1,17 +1,46 @@
 import fs from "node:fs";
-import path from "node:path";
 import {
   CreatorAnswers,
   CreatorSettings,
 } from "@/creatorSettings/creatorSettings.type";
 import defaultSettings from "@/creatorSettings/creatorSettings";
 import { logger } from "@/helper";
+import {
+  checkPathAccess,
+  defaultSettingsFile,
+  getFullPathWithDir,
+} from "../fsLibrary/fsLibrary";
+import {
+  ArgvOptionName,
+  defaultArgvValues,
+  getArgvOption,
+} from "../argvLibrary/argvLibrary";
+import { GetProfileReturns } from "./dataLibrary.types";
 
 const log = logger("Data Library");
 
+export const defaultProfile = "";
+
+export function getProfile(): GetProfileReturns {
+  const profileName = getArgvOption(ArgvOptionName.profile) as
+    | string
+    | undefined;
+  if (!profileName || profileName === defaultArgvValues.profile) {
+    return {
+      name: defaultProfile,
+      suffix: defaultProfile,
+    };
+  }
+
+  return {
+    name: profileName,
+    suffix: `.${profileName}`,
+  };
+}
+
 export function getCreatorSettings(): CreatorSettings {
-  const fullPath = `${path.dirname("./")}/.hayde.json`;
-  if (!fs.existsSync(fullPath)) {
+  const fullPath = getFullPathWithDir(defaultSettingsFile());
+  if (!checkPathAccess(fullPath)) {
     return defaultSettings;
   }
 
@@ -23,8 +52,8 @@ export function getCreatorSettings(): CreatorSettings {
     ) as CreatorSettings;
     return { ...settingsObj };
   } catch (error) {
-    log("Error parsing .hayde.json file", error);
-    throw new Error("Error parsing .hayde.json file");
+    log(`Error parsing ${defaultSettingsFile()} file`, error);
+    throw new Error(`Error parsing ${defaultSettingsFile()} file`);
   }
 }
 

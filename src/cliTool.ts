@@ -9,17 +9,21 @@ import {
 import {
   addAdditionalHelpers,
   checkTemplate,
-} from "@/internalFeatures/templatesLibrary";
+} from "@/internalFeatures/templatesLibrary/templatesLibrary";
 import {
   getCreatorSettings,
   replaceDefaultsWithDefaultValues,
-} from "@/internalFeatures/dataLibrary";
+} from "@/internalFeatures/dataLibrary/dataLibrary";
 import {
   ScriptNames,
   runScriptFromPackagejson,
-} from "@/internalFeatures/runScriptFromPackage";
+} from "@/internalFeatures/runScriptFromPackage/runScriptFromPackage";
 import { logger, publicLog } from "./helper";
-import { getArgvOptions } from "./internalFeatures/argvLibrary";
+import { getArgvOptions } from "./internalFeatures/argvLibrary/argvLibrary";
+import {
+  defaultSettingsFile,
+  initFSLibrary,
+} from "./internalFeatures/fsLibrary/fsLibrary";
 
 const log = logger("CLI Tool", true);
 
@@ -131,6 +135,7 @@ export class CliTool {
 
     const ArgvOptions = getArgvOptions();
     log("CLI script options:", ArgvOptions);
+    initFSLibrary();
 
     this.getSettingsFromJson();
     this.checkBeforeStart();
@@ -145,7 +150,7 @@ export class CliTool {
 
     if (!this.jsonSettings.plugins || this.jsonSettings.plugins.length === 0) {
       throw new Error(
-        "No plugins found in .hayde.json file or default settings."
+        `No plugins found in ${defaultSettingsFile()} file or default settings.`
       );
     }
 

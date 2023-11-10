@@ -8,7 +8,7 @@ dotenv.config({
 });
 
 import { CliTool } from "./cliTool";
-import { prepareArgv } from "./internalFeatures/argvLibrary";
+import { prepareArgv } from "./internalFeatures/argvLibrary/argvLibrary";
 
 prepareArgv();
 const cliTool = new CliTool();

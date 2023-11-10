@@ -8,8 +8,8 @@ import {
 import { IPluginOptions, ISettings, OutAnswers } from "./interfaces";
 import inquirer from "inquirer";
 import { questions } from "./questions";
-import { compileTemplate } from "@/internalFeatures/templatesLibrary";
-import { createFile } from "@/internalFeatures/fsLibrary";
+import { compileTemplate } from "@/internalFeatures/templatesLibrary/templatesLibrary";
+import { createFile } from "@/internalFeatures/fsLibrary/fsLibrary";
 
 export { questions } from "./questions";
 export { defaultSettings } from "./interfaces";

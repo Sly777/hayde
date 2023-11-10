@@ -7,7 +7,7 @@ import { IPluginOptions } from "./interfaces";
 import inquirer from "inquirer";
 import { questions } from "./questions";
 import { titleCase } from "@/helper";
-import { checkFolder } from "@/internalFeatures/fsLibrary";
+import { checkPathAccess } from "@/internalFeatures/fsLibrary/fsLibrary";
 
 export { questions } from "./questions";
 export { defaultSettings } from "./interfaces";
@@ -22,10 +22,10 @@ export async function initPlugin({
 > {
   const answers = (await inquirer.prompt(
     questions,
-    options,
+    options
   )) as Required<IPluginOptions>;
 
-  answers.isFolderAvailable = checkFolder(answers.srcFolderLocation);
+  answers.isFolderAvailable = checkPathAccess(answers.srcFolderLocation);
 
   if (!answers.isFolderAvailable) {
     throw new Error("Folder location is not available.");

@@ -1,0 +1,20 @@
+{
+  "plugins": [
+    {
+      "name": "general",
+      "options": {
+        "srcFolderLocation": "./src/components"
+      }
+    },
+    {
+      "name": "AI",
+      "options": {
+        "aiTool": "openAI",
+        "modelName": "gpt-4",
+        "aiCreateStorybook": true,
+        "aiCreateTest": true,
+        "isTS": true
+      }
+    }
+  ]
+}
