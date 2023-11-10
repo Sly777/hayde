@@ -1,6 +1,6 @@
 # Hayde
 
-![](https://github.com/Sly777/hayde/assets/694940/e843d06a-7d97-48ef-8d15-e4ca5fc8d28b)
+![](https://github.com/Sly777/hayde/assets/694940/c28e8507-eae9-4e9a-99f9-9a2f4487c79a)
 
 Hayde is CLI tool transforms React component creation, supporting frameworks like ChakraUI, MaterialUI, and leveraging AI tools like OpenAI and Ollama for smart, efficient coding. Perfect for developers seeking a fast, intuitive code generation experience.
 
