@@ -10,11 +10,11 @@
       "name": "AI",
       "options": {
         "aiTool": "openAI",
-        "openAIType": "vision",
-        "aiCreateStorybook": true,
-        "aiCreateTest": true,
+        "openAIType": "text",
+        "aiCreateStorybook": false,
+        "aiCreateTest": false,
         "isTS": true,
-        "openAIVisionType": "url"
+        "modelName": "gpt-4"
       }
     }
   ]

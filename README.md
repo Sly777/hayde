@@ -2,7 +2,7 @@
 
 ![](https://github.com/Sly777/hayde/assets/694940/e843d06a-7d97-48ef-8d15-e4ca5fc8d28b)
 
-Hayde is a CLI tool that allows you to create React components quickly and easily. With Hayde, you can focus on writing code instead of setting up boilerplate files.
+Hayde is CLI tool transforms React component creation, supporting frameworks like ChakraUI, MaterialUI, and leveraging AI tools like OpenAI and Ollama for smart, efficient coding. Perfect for developers seeking a fast, intuitive code generation experience.
 
 ***
 
@@ -34,6 +34,10 @@ or
 yarn add hayde --dev
 ```
 
+**Online Demo**
+
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://codesandbox.io/p/sandbox/react-vite-ts-with-hayde-n3ktql)
+
 ### Features
 
 * **Quick and Easy** 🚀 - Hayde allows you to create React components quickly and easily. With Hayde, you can focus on writing code instead of setting up boilerplate files.
@@ -49,6 +53,7 @@ yarn add hayde --dev
 * [Hayde](./#hayde)
   * [Quick Start](./#quick-start)
     * [Local Installation](./#local-installation)
+    * [Online Demo](./#online-demo)
   * [Features](./#features)
   * [Table of Contents](./#table-of-contents)
   * [Settings](./#settings)
