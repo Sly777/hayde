@@ -1,31 +1,10 @@
----
-description: >-
-  Hayde is a CLI tool that allows you to create React components quickly and
-  easily. With Hayde, you can focus on writing code instead of setting up
-  boilerplate files.
-cover: .gitbook/assets/Hayde_Social_Preview.jpeg
-coverY: -2.383999999999979
-layout:
-  cover:
-    visible: true
-    size: hero
-  title:
-    visible: false
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
-# Hayde
-
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code\_of\_conduct.md) [![GitHub](https://img.shields.io/github/license/sly777/hayde)](https://github.com/sly777/hayde/blob/main/LICENSE) [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/sly777/hayde)](https://github.com/sly777/hayde/pulse) [![GitHub last commit](https://img.shields.io/github/last-commit/sly777/hayde)](https://github.com/sly777/hayde/commits/main) [![Reliability Rating](https://sonarcloud.io/api/project\_badges/measure?project=Sly777\_hayde\&metric=reliability\_rating)](https://sonarcloud.io/summary/new\_code?id=Sly777\_hayde) [![Vulnerabilities](https://sonarcloud.io/api/project\_badges/measure?project=Sly777\_hayde\&metric=vulnerabilities)](https://sonarcloud.io/summary/new\_code?id=Sly777\_hayde) [![Security Rating](https://sonarcloud.io/api/project\_badges/measure?project=Sly777\_hayde\&metric=security\_rating)](https://sonarcloud.io/summary/new\_code?id=Sly777\_hayde) [![Maintainability Rating](https://sonarcloud.io/api/project\_badges/measure?project=Sly777\_hayde\&metric=sqale\_rating)](https://sonarcloud.io/summary/new\_code?id=Sly777\_hayde) [![Lines of Code](https://sonarcloud.io/api/project\_badges/measure?project=Sly777\_hayde\&metric=ncloc)](https://sonarcloud.io/summary/new\_code?id=Sly777\_hayde) [![Known Vulnerabilities](https://snyk.io/test/github/Sly777/hayde/badge.svg)](https://snyk.io/test/github/Sly777/hayde) [![npm version](https://badge.fury.io/js/hayde.svg)](https://badge.fury.io/js/hayde) [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/) [![Quality gate](https://sonarcloud.io/api/project\_badges/quality\_gate?project=Sly777\_hayde)](https://sonarcloud.io/summary/new\_code?id=Sly777\_hayde)
+![Hayde_Social_Preview](https://github.com/Sly777/hayde/assets/694940/e843d06a-7d97-48ef-8d15-e4ca5fc8d28b)
 
 Hayde is a CLI tool that allows you to create React components quickly and easily. With Hayde, you can focus on writing code instead of setting up boilerplate files.
+
+--------------
+
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code\_of\_conduct.md) [![GitHub](https://img.shields.io/github/license/sly777/hayde)](https://github.com/sly777/hayde/blob/main/LICENSE) [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/sly777/hayde)](https://github.com/sly777/hayde/pulse) [![GitHub last commit](https://img.shields.io/github/last-commit/sly777/hayde)](https://github.com/sly777/hayde/commits/main) [![Reliability Rating](https://sonarcloud.io/api/project\_badges/measure?project=Sly777\_hayde\&metric=reliability\_rating)](https://sonarcloud.io/summary/new\_code?id=Sly777\_hayde) [![Vulnerabilities](https://sonarcloud.io/api/project\_badges/measure?project=Sly777\_hayde\&metric=vulnerabilities)](https://sonarcloud.io/summary/new\_code?id=Sly777\_hayde) [![Security Rating](https://sonarcloud.io/api/project\_badges/measure?project=Sly777\_hayde\&metric=security\_rating)](https://sonarcloud.io/summary/new\_code?id=Sly777\_hayde) [![Maintainability Rating](https://sonarcloud.io/api/project\_badges/measure?project=Sly777\_hayde\&metric=sqale\_rating)](https://sonarcloud.io/summary/new\_code?id=Sly777\_hayde) [![Lines of Code](https://sonarcloud.io/api/project\_badges/measure?project=Sly777\_hayde\&metric=ncloc)](https://sonarcloud.io/summary/new\_code?id=Sly777\_hayde) [![Known Vulnerabilities](https://snyk.io/test/github/Sly777/hayde/badge.svg)](https://snyk.io/test/github/Sly777/hayde) [![npm version](https://badge.fury.io/js/hayde.svg)](https://badge.fury.io/js/hayde) [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/) [![Quality gate](https://sonarcloud.io/api/project\_badges/quality\_gate?project=Sly777\_hayde)](https://sonarcloud.io/summary/new\_code?id=Sly777\_hayde)
 
 ![Hayde Quick Start](https://github.com/Sly777/hayde/assets/694940/32e70b96-ed25-4897-95c4-76b7500bd925)
 
