@@ -1,14 +1,30 @@
-![Hayde_Social_Preview](https://github.com/Sly777/hayde/assets/694940/e843d06a-7d97-48ef-8d15-e4ca5fc8d28b)
+---
+layout:
+  title:
+    visible: false
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
+# Hayde
+
+![Hayde\_Social\_Preview](https://github.com/Sly777/hayde/assets/694940/e843d06a-7d97-48ef-8d15-e4ca5fc8d28b)
 
 Hayde is a CLI tool that allows you to create React components quickly and easily. With Hayde, you can focus on writing code instead of setting up boilerplate files.
 
---------------
+***
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code\_of\_conduct.md) [![GitHub](https://img.shields.io/github/license/sly777/hayde)](https://github.com/sly777/hayde/blob/main/LICENSE) [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/sly777/hayde)](https://github.com/sly777/hayde/pulse) [![GitHub last commit](https://img.shields.io/github/last-commit/sly777/hayde)](https://github.com/sly777/hayde/commits/main) [![Reliability Rating](https://sonarcloud.io/api/project\_badges/measure?project=Sly777\_hayde\&metric=reliability\_rating)](https://sonarcloud.io/summary/new\_code?id=Sly777\_hayde) [![Vulnerabilities](https://sonarcloud.io/api/project\_badges/measure?project=Sly777\_hayde\&metric=vulnerabilities)](https://sonarcloud.io/summary/new\_code?id=Sly777\_hayde) [![Security Rating](https://sonarcloud.io/api/project\_badges/measure?project=Sly777\_hayde\&metric=security\_rating)](https://sonarcloud.io/summary/new\_code?id=Sly777\_hayde) [![Maintainability Rating](https://sonarcloud.io/api/project\_badges/measure?project=Sly777\_hayde\&metric=sqale\_rating)](https://sonarcloud.io/summary/new\_code?id=Sly777\_hayde) [![Lines of Code](https://sonarcloud.io/api/project\_badges/measure?project=Sly777\_hayde\&metric=ncloc)](https://sonarcloud.io/summary/new\_code?id=Sly777\_hayde) [![Known Vulnerabilities](https://snyk.io/test/github/Sly777/hayde/badge.svg)](https://snyk.io/test/github/Sly777/hayde) [![npm version](https://badge.fury.io/js/hayde.svg)](https://badge.fury.io/js/hayde) [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/) [![Quality gate](https://sonarcloud.io/api/project\_badges/quality\_gate?project=Sly777\_hayde)](https://sonarcloud.io/summary/new\_code?id=Sly777\_hayde)
 
 ![Hayde Quick Start](https://github.com/Sly777/hayde/assets/694940/32e70b96-ed25-4897-95c4-76b7500bd925)
 
-## Quick Start
+### Quick Start
 
 To use Hayde, simply run the following command:
 
@@ -18,7 +34,7 @@ npx hayde@latest
 
 This will launch the CLI tool and guide you through the process of creating a new React component.
 
-#### Local Installation
+**Local Installation**
 
 If you want to install Hayde locally, you can run the following command:
 
@@ -32,7 +48,7 @@ or
 yarn add hayde --dev
 ```
 
-## Features
+### Features
 
 * **Quick and Easy** 🚀 - Hayde allows you to create React components quickly and easily. With Hayde, you can focus on writing code instead of setting up boilerplate files.
 * **Clean DX** ⭐ - Hayde is designed to be as simple as possible. It doesn't require any configuration or setup, so you can start using it right away. It's built with TypeScript.
@@ -42,7 +58,7 @@ yarn add hayde --dev
 * **Auto Import** ⏩ - Hayde automatically imports your components into your project if you want. You just need to add tags into target file and voila! You can check it on [BuilderIO](src/features/builderIO/) integration.
 * **AI Support** 🤖 - Hayde supports AI tools such as OpenAI (gpt-3.5 & gpt-4) and Ollama. You can create your components with AI easily! You can check it on [AI](src/features/AI/) integration. **It also supports GPT-4 Vision with URL and File Upload!**
 
-## Table of Contents
+### Table of Contents
 
 * [Hayde](./#hayde)
   * [Quick Start](./#quick-start)
@@ -59,7 +75,7 @@ yarn add hayde --dev
   * [Contributing](./#contributing)
   * [License](./#license)
 
-## Settings
+### Settings
 
 There are two options for running Hayde. Just simply run `npx hayde` or You can also run Hayde with `.hayde.json` file. This file allows you to specify default options for Hayde.
 
@@ -108,7 +124,7 @@ npx hayde
 
 For more information on the available options, please check the [options](docs/options.md) page.
 
-## Profiles
+### Profiles
 
 If you want to have multiple `.hayde` file, you can just create the file with your profile. For example; you can create two files called `.hayde.json` and `.hayde.ai.json`. And then you can run the following command to use the `.hayde.ai.json` file.
 
@@ -116,7 +132,7 @@ If you want to have multiple `.hayde` file, you can just create the file with yo
 npx hayde --profile ai
 ```
 
-## Examples
+### Examples
 
 For Examples, please check the [examples](examples/) folder. You can just copy JSON files from this folder and paste to root folder of your project. Then you can just run Hayde. Some examples are;
 
@@ -128,7 +144,7 @@ For Examples, please check the [examples](examples/) folder. You can just copy J
 
 You can find more examples in the [examples](examples/) folder.
 
-## Supported Libraries on Component Creation
+### Supported Libraries on Component Creation
 
 You can create React components with the following libraries, you just need to add the library name to the plugins array in the `.hayde.json` file.
 
@@ -143,15 +159,15 @@ You can create React components with the following libraries, you just need to a
 * [OpenAI](https://platform.openai.com) - [Source](src/features/AI/)
 * [Ollama](https://ollama.ai) - [Source](src/features/AI/)
 
-## NPM Scripts
+### NPM Scripts
 
 You can call any script you want before or after component creation! For NPM Scripts, please check the [npm scripts](docs/npm-scripts.md) page.
 
-## CLI Arguments
+### CLI Arguments
 
 For CLI Arguments, please check the [CLI arguments](docs/cli-arguments.md) page.
 
-## How to create custom plugin
+### How to create custom plugin
 
 For creating custom plugin, please check the [custom plugin](docs/how-to-create-custom-plugin.md) page. You can create your own libraries' plugin easily with extensive functionality and [Handlebars](https://handlebarsjs.com/) template engine.
 
@@ -171,12 +187,12 @@ then run the following command:
 npx hayde
 ```
 
-## Contributing
+### Contributing
 
 If you'd like to contribute to Hayde, please check the [contributing](docs/contributing.md) page. Contributions are always welcome!
 
 If you want to integrate your library/plugin/boilerplate to Hayde, please check the [how to create custom plugin](docs/how-to-create-custom-plugin.md) page.
 
-## License
+### License
 
 Distributed under the GPL-3.0 License. See [LICENSE](LICENSE/) for more information.
