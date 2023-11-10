@@ -1,5 +1,0 @@
---robin-egg-blue: #25ced1ff;
---electric-blue: #6feef0ff;
---apricot: #ffdbc3ff;
---coral: #ff8a5bff;
---bright-pink-crayola: #ea526fff;
