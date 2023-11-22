@@ -78,6 +78,9 @@ export function getComponentCreationViaVisionPrompt({
     8. Prefer functional components with hooks for state management. Ensure the component is modular and testable.
     9. Add comments to the code for clarity to other developers.
     10. Valid the code that you created. If it's not correct, please send the correct code.
+    11. Add all elements and styling as shown in the image. Don't add comment that says 'Add more elements' or 'Add more styling'.
+    12. Create the component as same size as the image. Don't create the component as different size than the image.
+    13. Use 'font awesome' for icons. Icons must be same size as the image.
 
     Return only the full, complete code of the component.
   `;
