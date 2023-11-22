@@ -93,7 +93,7 @@ function getClassnamesAndIDs(html: string): {
   if (classMatches) {
     for (const match of classMatches) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unnecessary-type-assertion
-      const classes = match.replaceAll(classRegex, "$1").split(" ") as string[];
+      const classes = match.replaceAll(classRegex, "$1").split(" ");
       classNames = [...classNames, ...classes];
     }
   }

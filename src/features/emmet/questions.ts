@@ -13,7 +13,7 @@ export const qEmmetArea: ListQuestion<Answers> = {
   when: (answers: IPluginOptions) => {
     return (
       answers.area == undefined ||
-      !answers.code?.includes(answers.componentContentTag || "")
+      !answers.code?.includes(answers.componentContentTag ?? "")
     );
   },
   type: "list",

@@ -22,7 +22,7 @@ export function addAdditionalHelpers() {
     },
     blockHelperMissing: function (context, options) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      return options.data.root[options.name] === undefined ? false : true;
+      return options.data.root[options.name] !== undefined;
     },
   });
 }
