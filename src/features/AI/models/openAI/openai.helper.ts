@@ -32,12 +32,17 @@ export async function createVisionPrompt(
       type: "image_url"!,
       image_url: {
         url: `data:image/jpeg;base64,${imageData.toString("base64")}`,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        detail: "high",
       },
     };
   } else {
     data = {
       type: "image_url",
-      image_url: imagePath,
+      image_url: {
+        url: imagePath,
+      },
     };
   }
 

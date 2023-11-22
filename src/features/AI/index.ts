@@ -25,6 +25,7 @@ import {
   callAgentForStorybook as ollamaCallAgentForStorybook,
   callAgentForTesting as ollamaCallAgentForTesting,
 } from "./models/ollama/ollama.helper";
+import { OpenAITypes } from "./models/openAI/openai.types";
 
 export { questions } from "./questions";
 export { defaultSettings } from "./interfaces";
@@ -90,11 +91,11 @@ export async function runPlugin({
   switch (aiTool) {
     case AITools.openAI: {
       switch (aiAnswers.openAIType) {
-        case "text": {
+        case OpenAITypes.text: {
           response = await openAICallAgent(reqData);
           break;
         }
-        case "vision": {
+        case OpenAITypes.vision: {
           response = await callAgentViaVision(reqData);
           break;
         }
@@ -110,7 +111,9 @@ export async function runPlugin({
   log("AI response:", response);
 
   spinner.succeed("AI answer received");
-  createFile(allAnswers, aiAnswers.isTS ? ".tsx" : ".jsx", response as string);
+  createFile(allAnswers, aiAnswers.isTS ? ".tsx" : ".jsx", response as string, {
+    noFormat: true,
+  });
 
   if (aiAnswers.aiCreateStorybook) {
     const spStorybook = ora({
