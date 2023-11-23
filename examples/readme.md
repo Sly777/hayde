@@ -14,7 +14,9 @@ Click here to see the [GitHub](https://github.com/Sly777/hayde/tree/main/example
 
 ### How to create a calculator component
 
-[Calculator](https://github.com/Sly777/hayde/assets/694940/d6d2a112-ade8-4be1-a59a-9e669195919c)
+{% embed url="https://github-production-user-asset-6210df.s3.amazonaws.com/694940/285187015-d6d2a112-ade8-4be1-a59a-9e669195919c.mp4" %}
+Calculator
+{% endembed %}
 
 ### How to create a login form component
 
@@ -23,4 +25,3 @@ Click here to see the [GitHub](https://github.com/Sly777/hayde/tree/main/example
 ### How to create a weather widget component
 
 [Weather Widget](https://github.com/Sly777/hayde/assets/694940/0de2f34a-b28c-41a2-9829-f9c05bfc3532)
-
