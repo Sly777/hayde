@@ -14,13 +14,13 @@ Click here to see the [GitHub](https://github.com/Sly777/hayde/tree/main/example
 
 ### How to create a calculator component
 
-https://github.com/Sly777/hayde/assets/694940/d6d2a112-ade8-4be1-a59a-9e669195919c
+[Calculator](https://github.com/Sly777/hayde/assets/694940/d6d2a112-ade8-4be1-a59a-9e669195919c)
 
 ### How to create a login form component
 
-https://github.com/Sly777/hayde/assets/694940/11390092-08b9-4a02-a0d5-0384be26e22c
+[Login Form](https://github.com/Sly777/hayde/assets/694940/11390092-08b9-4a02-a0d5-0384be26e22c)
 
 ### How to create a weather widget component
 
-https://github.com/Sly777/hayde/assets/694940/0de2f34a-b28c-41a2-9829-f9c05bfc3532
+[Weather Widget](https://github.com/Sly777/hayde/assets/694940/0de2f34a-b28c-41a2-9829-f9c05bfc3532)
 
