@@ -20,8 +20,12 @@ Calculator
 
 ### How to create a login form component
 
-[Login Form](https://github.com/Sly777/hayde/assets/694940/11390092-08b9-4a02-a0d5-0384be26e22c)
+{% embed url="https://github-production-user-asset-6210df.s3.amazonaws.com/694940/285187100-11390092-08b9-4a02-a0d5-0384be26e22c.mp4" %}
+Login Form
+{% endembed %}
 
 ### How to create a weather widget component
 
-[Weather Widget](https://github.com/Sly777/hayde/assets/694940/0de2f34a-b28c-41a2-9829-f9c05bfc3532)
+{% embed url="https://github-production-user-asset-6210df.s3.amazonaws.com/694940/285187114-0de2f34a-b28c-41a2-9829-f9c05bfc3532.mp4" %}
+Weather Widget
+{% endembed %}
