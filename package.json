@@ -39,7 +39,7 @@
     "axios": "1.6.2",
     "cfonts": "3.2.0",
     "commander": "11.1.0",
-    "dotenv": "16.3.1",
+    "dotenv": "16.3.2",
     "emmet": "2.4.6",
     "handlebars": "4.7.8",
     "inquirer": "9.2.12",
