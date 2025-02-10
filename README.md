@@ -38,6 +38,21 @@ yarn add hayde --dev
 
 [![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://codesandbox.io/p/sandbox/react-vite-ts-with-hayde-n3ktql)
 
+### Optional Online IDE
+
+If you can't or don't want to run and install locally, you can work with this repo in an online IDE. If you do this, you can skip the `clone this repo` part.
+
+#### Open in Gitpod
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Sly777/hayde/)
+
+#### Open in codespaces 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Sly777/hayde/)
+
+#### Open in Codeanywhere
+
+ [![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/Sly777/hayde/)
+
 ### Features
 
 * **Quick and Easy** 🚀 - Hayde allows you to create React components quickly and easily. With Hayde, you can focus on writing code instead of setting up boilerplate files.
